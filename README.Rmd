@@ -1,26 +1,14 @@
-# STAT 687 - Summer 2017
-Welcome! The purpose of this course is to be awesome and to help make you awesome as well.
-  
+---
+title: 'Welcome to STAT 687 - Math of Reliability!'
+subtitle: 'Summer 2017'
+output: 
+  html_document:
+    keep_md: true
+---
 
+# Course Overview & Objectives
 
-## Course Time and Location
-
-- MTWF 1000-1100 Bldg. 646 Rm. 220
-
-## Instructor and Office
-- Maj Jason Freels, Bldg. 640, Rm. 205B
-- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
-- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
-- Phone: (937) 255-3636 ext. 4676
-- Cell:  (937) 430-6619
-
-## Office hours
-
-- By appointment
-
-## Course Objectives
-
-The course presents advanced mathematical concepts for analyzing real-world reliability (survivability, time-to-event) data.
+This course presents advanced statistical concepts for extracting results from real-world reliability (survivability, time-to-event) data.
 
 Focus areas:
 
@@ -29,6 +17,22 @@ Focus areas:
 2. Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
 
 3. Communicate analysis techinques and results together using [**rmarkdown**](http://rmarkdown.rstudio.com/) and [**shiny**](http://shiny.rstudio.com/)
+
+
+# Course Time and Location
+
+- MTWF 1000-1100 Bldg. 646 Rm. 220
+
+# Instructor and Office
+
+- Maj Jason Freels, Bldg. 640, Rm. 205B
+- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
+- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
+- Phone: (937) 255-3636 ext. 4676
+- Cell:  (937) 430-6619
+- Office hours: By appointment
+
+# Course Resources
 
 ## Required Text
 
@@ -55,9 +59,7 @@ Focus areas:
 - [__Army Material Systems Analysis Activity__](http://web.amsaa.army.mil/home.html/)
 
 
-# Grading
-
-
+# Course Deliverables and Grading Policy
 
 - Homework: 35%
 - Exams: 35%
@@ -65,7 +67,7 @@ Focus areas:
 
 ## Homework (5 - 6 Assignments)
 
-- Homework is assigned to help you learn the material.  If you don't do the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but everyone must complete and turn in their own work.  You won't learn much from copying someone's homework set, so don't do it.  You may use any other available resource to complete the assignments, however you must cite them.  Homework will be graded on completeness, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see __Exams__.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
+Homework is assigned to help you learn the material.  If you don't do the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but everyone must complete and turn in their own work.  You won't learn much from copying someone's homework set, so don't do it.  You may use any other available resource to complete the assignments, however you must cite them.  Homework will be graded on completeness, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see __Exams__.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
 
 - The homework process in this class
 
@@ -83,10 +85,11 @@ Focus areas:
 
     7) I will provide HW solutions after I have received everyone's assignment  
 
-## Exams
-- I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy to grade.  After I receive your completed homework assignments and provide the solutions, I'll choose 3-4 exercises from the homework set to serve as exam questions.  These selected exercises will be evaluated more rigorously than the others and grade will serve as your exam score.  A comprehensive final exam take-home will be given during the final class meeting (due date TBD)
+## Exams (35% of overall grade)
 
-## Final Project
+I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy to grade.  After I receive your completed homework assignments and provide the solutions, I'll choose 3-4 exercises from the homework set to serve as exam questions.  These selected exercises will be evaluated more rigorously than the others and grade will serve as your exam score.  A comprehensive final exam take-home will be given during the final class meeting (due date TBD)
+
+## Final Project (30% of overall grade)
 
 - The final project is intended to develop your skills in applying the reliability concepts learned in this course.  The goal of the project is to perform a reliability analysis using a data set that you create.  Exemptions may be made to allow the use of existing data sets on a case by case basis.
 
