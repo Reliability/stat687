@@ -34,8 +34,8 @@ Co-requisites: None
 ## Course Instructor and Office
 
 - Maj Jason Freels, Bldg. 640, Rm. 205B
-- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
-- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
+- Email: <a href="mailto:jason.freels@afit.edu" target="_top"><b>jason.freels@afit.edu</b></a>
+- Email: <a href="mailto:auburngrads@live.com" target="_top"><b>auburngrads@live.com</b></a>
 - Phone: (937) 255-3636 ext. 4676
 - Cell:  (937) 430-6619
 - Office hours: By appointment
