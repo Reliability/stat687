@@ -1,34 +1,50 @@
-# STAT 687 - Summer 2017
-Welcome! The purpose of this course is to be awesome and to help make you awesome as well.
-  
+# STAT 687 - Math of Reliability
 
+<style type='text/css'>
+h2 { border-bottom: 1px solid black }
+h1 { font-weight: bold; text-transform: uppercase;}
+</style>
 
-## Course Time and Location
+# Course Overview
 
-- MTWF 1000-1100 Bldg. 646 Rm. 220
+## Learning Objectives
 
-## Instructor and Office
-- Maj Jason Freels, Bldg. 640, Rm. 205B
-- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
-- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
-- Phone: (937) 255-3636 ext. 4676
-- Cell:  (937) 430-6619
+This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
 
-## Office hours
-
-- By appointment
-
-## Course Objectives
-
-The course presents advanced mathematical concepts for analyzing real-world reliability (survivability, time-to-event) data.
-
-Focus areas:
+Upon completing this course students should be able to:
 
 1. Understand concepts for computing statistical estimates from reliability data
 
 2. Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
 
 3. Communicate analysis techinques and results together using [**rmarkdown**](http://rmarkdown.rstudio.com/) and [**shiny**](http://shiny.rstudio.com/)
+
+## Credit hours
+
+Upon completing this course students will be awarded **<u>4.0 Quarter Hours</u>**
+
+## Pre-requisites & Co-requisites
+
+Students must have completed the following courses prior to enrolling in STAT 687.  Requests to waive these requirements  completion any or all of these required courses  (or their equivalent) must Unless otherwise: 
+
+- STAT 602
+
+Co-requisites: None
+
+## Meeting Time & Location
+
+- MTWF 1000-1100 Bldg. 646 Rm. 220
+
+## Course Instructor and Office
+
+- Maj Jason Freels, Bldg. 640, Rm. 205B
+- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
+- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
+- Phone: (937) 255-3636 ext. 4676
+- Cell:  (937) 430-6619
+- Office hours: By appointment
+
+# Course Resources
 
 ## Required Text
 
@@ -55,17 +71,13 @@ Focus areas:
 - [__Army Material Systems Analysis Activity__](http://web.amsaa.army.mil/home.html/)
 
 
-# Grading
+# Course Deliverables and Grading Policy
 
+__Academic Integrity:__ All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: Student Handbook, ENOI 36 – 107, Academic Integrity)
 
+## Homework (33% )
 
-- Homework: 35%
-- Exams: 35%
-- Project: 30% 
-
-## Homework (5 - 6 Assignments)
-
-- Homework is assigned to help you learn the material.  If you don't do the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but everyone must complete and turn in their own work.  You won't learn much from copying someone's homework set, so don't do it.  You may use any other available resource to complete the assignments, however you must cite them.  Homework will be graded on completeness, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see __Exams__.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
+Homework is assigned to help you learn the material.  If you don't do the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it.  You may use any available resource to complete the assignments, however you must cite them.  Homework will be graded on __<u>completeness</u>__, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see __Exams__.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
 
 - The homework process in this class
 
@@ -83,10 +95,11 @@ Focus areas:
 
     7) I will provide HW solutions after I have received everyone's assignment  
 
-## Exams
-- I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy to grade.  After I receive your completed homework assignments and provide the solutions, I'll choose 3-4 exercises from the homework set to serve as exam questions.  These selected exercises will be evaluated more rigorously than the others and grade will serve as your exam score.  A comprehensive final exam take-home will be given during the final class meeting (due date TBD)
+## Exams (33% of overall grade)
 
-## Final Project
+I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy for me to grade.  After receiving your completed homework assignments, I will choose 3-4 exercises from the homework set to serve as exam questions.  These selected exercises will be evaluated more rigorously than the others and grade will serve as your exam score.  A comprehensive final exam take-home will be given during the final class meeting (due date TBD)
+
+## Final Project (33% of overall grade)
 
 - The final project is intended to develop your skills in applying the reliability concepts learned in this course.  The goal of the project is to perform a reliability analysis using a data set that you create.  Exemptions may be made to allow the use of existing data sets on a case by case basis.
 
@@ -145,6 +158,8 @@ Focus areas:
 - (0.83 - 0.80]: B-
 - (0.80 - 0.77]: C
 
+__Academic Grievance:__ AFIT and the Graduate School of Engineering and Management affirm the right of each student to resolve grievances with the Institution. Students are guaranteed the right of fair hearing and appeal in all matters of judgment of academic performance. Procedures are detailed in ENOI 36 – 138, Student Academic Performance Appeals.
+
 ## Approximate Course Outline
 - [__Chapter  1: Reliability Concepts and Reliability Data__](https://afit.shinyapps.io/smrd-chapter-1) (Week 1)
 - [__Chapter  2: Models, Censoring and Likelihood for Time-to-Failure Data__](https://afit.shinyapps.io/smrd-chapter-2) (Week 2)
@@ -163,6 +178,8 @@ Focus areas:
 - [__Chapter 18: Accelerated Test Models__](https://afit.shinyapps.io/smrd-chapter-18) (Week 9)
 - [__Chapter 19: Analyzing Accelerated Life Test Data__](https://afit.shinyapps.io/smrd-chapter-19) (Week 9-10)
 - [__Chapter 20: Planning Accelerated Life Tests__](https://afit.shinyapps.io/smrd-chapter-20) (Week 10)
+
+__Attendance Policy:__ Attendance at all class sessions and exams is mandatory for military and civilians assigned to AFIT as full-time students except for extenuating circumstances. Part-time students are expected to attend scheduled classes, and absences should be explained to the instructor. The student should provide advance notice, if possible. Scheduled classes and exams are defined by the instructor and they are documented in the course schedule. (References: Student Handbook, Graduate School Catalog)
 
 ## My Teaching Philosophy
 
