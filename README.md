@@ -1,10 +1,9 @@
 # STAT 687 - Math of Reliability
 
-<style>upper { text-transform: uppercase !important; }</style>
+<link rel="stylesheet" type="text/css" href="https://github.com/Reliability/stat687/tree/master/css" media="screen" />
+<h1> Course Overview</h1>
 
-<h1 style='border-bottom: 2px solid black;'>Course Overview</h1>
-
-<h2 style='text-transform: uppercase;'> Learning Objectives </h2>
+<h2>Learning Objectives</h2>
 
 This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
 
