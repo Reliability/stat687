@@ -1,5 +1,7 @@
 # STAT 687 - Math of Reliability
 
+<style></style>
+
 # Course Overview
 
 ## Learning Objectives
