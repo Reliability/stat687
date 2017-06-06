@@ -1,6 +1,6 @@
 # STAT 687 - Math of Reliability
 
-<link rel="stylesheet" type="text/css" href="https://github.com/Reliability/stat687/tree/master/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Reliability/stat687/master/css/README.css"/>
 <h1> Course Overview</h1>
 
 <h2>Learning Objectives</h2>
