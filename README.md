@@ -1,7 +1,7 @@
 # STAT 687 - Math of Reliability
 
 <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Reliability/stat687/master/css/README.css"/>
-<h1> Course Overview</h1>
+<h1 style="color: green !important;"> Course Overview</h1>
 
 <h2>Learning Objectives</h2>
 
