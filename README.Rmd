@@ -4,12 +4,8 @@ subtitle: 'Course Syllabus (Summer 2017)'
 output: 
   html_document:
     keep_md: true
+css: 'css/README.css'
 ---
-
-<style type='text/css'>
-h2 { border-bottom: 1px solid black }
-h1 { font-weight: bold; text-transform: uppercase;}
-</style>
 
 # Course Overview
 

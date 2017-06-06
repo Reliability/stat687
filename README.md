@@ -1,10 +1,5 @@
 # STAT 687 - Math of Reliability
 
-<style type='text/css'>
-h2 { border-bottom: 1px solid black }
-h1 { font-weight: bold; text-transform: uppercase;}
-</style>
-
 # Course Overview
 
 ## Learning Objectives
