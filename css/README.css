@@ -1,2 +1,2 @@
-h2 { border-bottom: 1px solid black !important }
+.markdown-body h2 { border-bottom: 1px solid black !important }
 h1 { font-weight: bold; text-transform: uppercase;}

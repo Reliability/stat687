@@ -7,6 +7,8 @@ output:
 css: 'css/README.css'
 ---
 
+<style></style>
+
 # Course Overview
 
 ## Learning Objectives
