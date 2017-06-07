@@ -2,19 +2,34 @@ STAT 687 - Course Syllabus (Summer 2017)
 ================
 
 -   [Welcome to Math of Reliability!](#welcome-to-math-of-reliability)
--   [Course Overview](#course-overview)
+-   [Learning Objectives](#learning-objectives)
+-   [Credit hours](#credit-hours)
+-   [Pre-requisites & Co-requisites](#pre-requisites-co-requisites)
+-   [Meeting Time & Location](#meeting-time-location)
+-   [Course Instructor and Office](#course-instructor-and-office)
 -   [Course Resources](#course-resources)
+    -   [Required Text](#required-text)
+    -   [Additional Reliability Resources (Textbooks)](#additional-reliability-resources-textbooks)
+    -   [Additional Reliability Resources (online)](#additional-reliability-resources-online)
 -   [Course Deliverables and Grading Policy](#course-deliverables-and-grading-policy)
+    -   [Homework (33% )](#homework-33)
+    -   [Exams (33% of overall grade)](#exams-33-of-overall-grade)
+    -   [Final Project (33% of overall grade)](#final-project-33-of-overall-grade)
+    -   [Software/Computer Programming](#softwarecomputer-programming)
+    -   [A Few Important Dates](#a-few-important-dates)
+    -   [Grading](#grading)
+    -   [Approximate Course Outline](#approximate-course-outline)
+    -   [My Teaching Philosophy](#my-teaching-philosophy)
+    -   [Challenge your instructor](#challenge-your-instructor)
+    -   ["How not to do Reliability"](#how-not-to-do-reliability)
 
+<style>p { font-size: 1.5em; }</style>
 Welcome to Math of Reliability!
-===============================
+-------------------------------
 
 This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
 
 ![](img/class-graph.png)
-
-Course Overview
-===============
 
 Learning Objectives
 -------------------
@@ -24,6 +39,7 @@ Upon completing this course students should be able to:
 1.  Construct likelihood functions
 
 2.  Compute point estimates for parameters and functions of parameters
+
 3.  Compute interval estimates for data with censoring mpute point Understand concepts for computing statistical estimates from reliability data
 
 4.  Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
