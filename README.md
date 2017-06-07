@@ -17,7 +17,7 @@ Upon completing this course students should be able to:
 
 ## Credit hours
 
-Upon completing this course students will be awarded **<u>4.0 Quarter Hours</u>**
+Upon completing this course students will be awarded __**4.0 Quarter Hours**__
 
 ## Pre-requisites & Co-requisites
 
