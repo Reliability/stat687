@@ -1,15 +1,18 @@
 # STAT 687 - Math of Reliability
+MTWF 1000-1100 Bldg. 646 Rm. 220  
 
-<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Reliability/stat687/master/css/README.css"/>
-<h1 style="color: green !important;"> Course Overview</h1>
+# Course Overview
 
-<h2>Learning Objectives</h2>
+## Learning Objectives
 
 This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
 
 Upon completing this course students should be able to:
 
-1. Understand concepts for computing statistical estimates from reliability data
+1. Construct likelihood functions 
+
+2. Compute point estimates for parameters and functions of parameters 
+3. Compute interval estimates for data with censoring  mpute point Understand concepts for computing statistical estimates from reliability data
 
 2. Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
 
@@ -17,7 +20,7 @@ Upon completing this course students should be able to:
 
 ## Credit hours
 
-Upon completing this course students will be awarded __**4.0 Quarter Hours**__
+Upon completing this course students will be awarded **<u>4.0 Quarter Hours</u>**
 
 ## Pre-requisites & Co-requisites
 
@@ -34,8 +37,8 @@ Co-requisites: None
 ## Course Instructor and Office
 
 - Maj Jason Freels, Bldg. 640, Rm. 205B
-- Email: <a href="mailto:jason.freels@afit.edu" target="_top"><b>jason.freels@afit.edu</b></a>
-- Email: <a href="mailto:auburngrads@live.com" target="_top"><b>auburngrads@live.com</b></a>
+- Email: <a href="mailto:jason.freels@afit.edu target="_top"><b>jason.freels@afit.edu</b></a>
+- Email: <a href="mailto:auburngrads@live.com target="_top"><b>auburngrads@live.com</b></a>
 - Phone: (937) 255-3636 ext. 4676
 - Cell:  (937) 430-6619
 - Office hours: By appointment
