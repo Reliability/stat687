@@ -2,6 +2,28 @@ STAT 687 - Math of Reliability
 ================
 MTWF 1000-1100 Bldg. 646 Rm. 220
 
+-   [Course Overview](#course-overview)
+    -   [Learning Objectives](#learning-objectives)
+    -   [Credit hours](#credit-hours)
+    -   [Pre-requisites & Co-requisites](#pre-requisites-co-requisites)
+    -   [Meeting Time & Location](#meeting-time-location)
+    -   [Course Instructor and Office](#course-instructor-and-office)
+-   [Course Resources](#course-resources)
+    -   [Required Text](#required-text)
+    -   [Additional Reliability Resources (Textbooks)](#additional-reliability-resources-textbooks)
+    -   [Additional Reliability Resources (online)](#additional-reliability-resources-online)
+-   [Course Deliverables and Grading Policy](#course-deliverables-and-grading-policy)
+    -   [Homework (33% )](#homework-33)
+    -   [Exams (33% of overall grade)](#exams-33-of-overall-grade)
+    -   [Final Project (33% of overall grade)](#final-project-33-of-overall-grade)
+    -   [Software/Computer Programming](#softwarecomputer-programming)
+    -   [A Few Important Dates](#a-few-important-dates)
+    -   [Grading](#grading)
+    -   [Approximate Course Outline](#approximate-course-outline)
+    -   [My Teaching Philosophy](#my-teaching-philosophy)
+    -   [Challenge your instructor](#challenge-your-instructor)
+    -   ["How not to do Reliability"](#how-not-to-do-reliability)
+
 Course Overview
 ===============
 
@@ -44,8 +66,8 @@ Course Instructor and Office
 ----------------------------
 
 -   Maj Jason Freels, Bldg. 640, Rm. 205B
--   Email: <a href="mailto:jason.freels@afit.edu target="_top"><b><jason.freels@afit.edu></b></a>
--   Email: <a href="mailto:auburngrads@live.com target="_top"><b><auburngrads@live.com></b></a>
+-   Email: <a href="mailto:jason.freels@afit.edu" target="_top"><b><jason.freels@afit.edu></b></a>
+-   Email: <a href="mailto:auburngrads@live.com" target="_top"><b><auburngrads@live.com></b></a>
 -   Phone: (937) 255-3636 ext. 4676
 -   Cell: (937) 430-6619
 -   Office hours: By appointment
