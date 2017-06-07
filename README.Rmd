@@ -1,13 +1,12 @@
 ---
 title: 'STAT 687 - Math of Reliability'
 subtitle: 'Course Syllabus (Summer 2017)'
+date: 'MTWF 1000-1100 Bldg. 646 Rm. 220'
 output: 
   html_document:
     keep_md: true
 css: 'css/README.css'
 ---
-
-<style></style>
 
 # Course Overview
 
@@ -17,7 +16,10 @@ This course presents advanced statistical concepts for extracting decision-quali
 
 Upon completing this course students should be able to:
 
-1. Understand concepts for computing statistical estimates from reliability data
+1. Construct likelihood functions 
+
+2. Compute point estimates for parameters and functions of parameters 
+3. Compute interval estimates for data with censoring  mpute point Understand concepts for computing statistical estimates from reliability data
 
 2. Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
 
