@@ -23,7 +23,7 @@ STAT 687 - Course Syllabus (Summer 2017)
     -   [Challenge your instructor](#challenge-your-instructor)
     -   ["How not to do Reliability"](#how-not-to-do-reliability)
 
-<style>p { font-size: 1.5em; }</style>
+<style>.markdown-body p { font-size: 1.5em; }</style>
 Welcome to Math of Reliability!
 -------------------------------
 
