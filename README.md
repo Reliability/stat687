@@ -1,36 +1,23 @@
-STAT 687 - Math of Reliability
+STAT 687 - Course Syllabus (Summer 2017)
 ================
-MTWF 1000-1100 Bldg. 646 Rm. 220
 
+-   [Welcome to Math of Reliability!](#welcome-to-math-of-reliability)
 -   [Course Overview](#course-overview)
-    -   [Learning Objectives](#learning-objectives)
-    -   [Credit hours](#credit-hours)
-    -   [Pre-requisites & Co-requisites](#pre-requisites-co-requisites)
-    -   [Meeting Time & Location](#meeting-time-location)
-    -   [Course Instructor and Office](#course-instructor-and-office)
 -   [Course Resources](#course-resources)
-    -   [Required Text](#required-text)
-    -   [Additional Reliability Resources (Textbooks)](#additional-reliability-resources-textbooks)
-    -   [Additional Reliability Resources (online)](#additional-reliability-resources-online)
 -   [Course Deliverables and Grading Policy](#course-deliverables-and-grading-policy)
-    -   [Homework (33% )](#homework-33)
-    -   [Exams (33% of overall grade)](#exams-33-of-overall-grade)
-    -   [Final Project (33% of overall grade)](#final-project-33-of-overall-grade)
-    -   [Software/Computer Programming](#softwarecomputer-programming)
-    -   [A Few Important Dates](#a-few-important-dates)
-    -   [Grading](#grading)
-    -   [Approximate Course Outline](#approximate-course-outline)
-    -   [My Teaching Philosophy](#my-teaching-philosophy)
-    -   [Challenge your instructor](#challenge-your-instructor)
-    -   ["How not to do Reliability"](#how-not-to-do-reliability)
+
+Welcome to Math of Reliability!
+===============================
+
+This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
+
+![](img/class-graph.png)
 
 Course Overview
 ===============
 
 Learning Objectives
 -------------------
-
-This course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (survivability, time-to-event) data.
 
 Upon completing this course students should be able to:
 
