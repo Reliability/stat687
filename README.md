@@ -12,7 +12,7 @@ STAT 687 - Course Syllabus (Summer 2017)
     -   [Additional Reliability Resources (Textbooks)](#additional-reliability-resources-textbooks)
     -   [Additional Reliability Resources (online)](#additional-reliability-resources-online)
 -   [Course Deliverables and Grading Policy](#course-deliverables-and-grading-policy)
-    -   [Homework (33% )](#homework-33)
+    -   [Homework (33%)](#homework-33)
     -   [Exams (33% of overall grade)](#exams-33-of-overall-grade)
     -   [Final Project (33% of overall grade)](#final-project-33-of-overall-grade)
     -   [Software/Computer Programming](#softwarecomputer-programming)
@@ -33,17 +33,34 @@ This course presents advanced statistical concepts for extracting decision-quali
 Learning Objectives
 -------------------
 
-Upon completing this course students should be able to:
+Upon completing this course students should:
 
-1.  Construct likelihood functions
+1.  Understand statistical methods for life-data analyses, specifically:
 
-2.  Compute point estimates for parameters and functions of parameters
+    -   How these methods differ from other statistical methods
+    -   Why statistical censoring is important
+    -   The differences between right, left, and interval censoring
+    -   Why all data is interval censored data
+    -   How to use nonparametric methods of model selection
 
-3.  Compute interval estimates for data with censoring mpute point Understand concepts for computing statistical estimates from reliability data
+2.  Understand maximum likelihood (ML) estimation, specifically:
 
-4.  Use software to apply these concepts to various real-world data structures (This course uses R & RStudio)
+    -   How to construct likelihood functions for data with and without censoring
+    -   How to fit data to a parametric model by maximizing likelihood functions analytically, graphically, and computationally
+    -   The importance of ML estimation in both frequentist and Bayesian domains
+    -   The important of the relative likelihood and profile likelihood functions
 
-5.  Communicate analysis techinques and results together using [**rmarkdown**](http://rmarkdown.rstudio.com/) and [**shiny**](http://shiny.rstudio.com/)
+3.  Understand various point and interval estimation techniques, specifically:
+
+    -   How to use data to compute estimates for parameters and functions of parameters
+    -   How to use data to compute confidence intervals and credible intervals for parameters and functions of parameters
+    -   The importance of the Delta method and how to use it for an arbitrary function
+
+4.  Understand how to use software to implement the course objectives and communicate analysis results, specifically:
+
+    -   How to use R & RStudio compute results from real-world life data
+    -   How to communicate analysis techinques and results together using [**rmarkdown**](http://rmarkdown.rstudio.com/)
+    -   How to build interactive plots using [**shiny**](http://shiny.rstudio.com/)
 
 Credit hours
 ------------
@@ -53,11 +70,9 @@ Upon completing this course students will be awarded **<u>4.0 Quarter Hours</u>*
 Pre-requisites & Co-requisites
 ------------------------------
 
-Students must have completed the following courses prior to enrolling in STAT 687. Requests to waive these requirements completion any or all of these required courses (or their equivalent) must Unless otherwise:
+Unless otherwise waived by the course instructor, students are required to have completed the following courses prior to enrolling in STAT 687. Requests to waive these required courses must be made in accordance AFIT EN policy guidelines and must be approved by the course instructor. Waivers my be approved for students that have has successfully completed a similar courses or if special arrangements are made to meet AFIT requirements
 
 -   STAT 602
-
-Co-requisites: None
 
 Meeting Time & Location
 -----------------------
@@ -109,26 +124,32 @@ Course Deliverables and Grading Policy
 
 **Academic Integrity:** All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: Student Handbook, ENOI 36 – 107, Academic Integrity)
 
-Homework (33% )
----------------
+Homework (33%)
+--------------
 
-Homework is assigned to help you learn the material. If you don't do the assignments, you won't do well in the course. You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it. You may use any available resource to complete the assignments, however you must cite them. Homework will be graded on **<u>completeness</u>**, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see **Exams**. Solutions will be posted after the assignments are turned in. Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
+Homework will be assigned throughout the course to help you learn the material. If you don't complete the assignments, you won't do well in the course. You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it. You may use any available resource to complete the assignments, however you must cite them. Homework will be graded on **<u>completeness</u>**, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see **Exams**. Solutions will be posted after the assignments are turned in. Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
 
--   The homework process in this class
+-   The homework process in this class is as follows
 
-    1.  I will provide you a "knitr-shell" of the assignment
+    1.  I will separate you into GitHub teams of two or three prior to the first assignment
 
-    2.  You will enter your work into the shell
+    2.  I will create a private repository for each team
 
-    3.  You ~~may~~ <u>should</u> work together to complete the assignments
+    3.  containing a edit-able shell of the assignment
 
-    4.  Everyone must turn-in their own work
+    <!-- -->
 
-    5.  Completed homework assignments will be emailed to me as a .Rmd file
+    1.  You will enter your work into the shell
 
-    6.  I will compile the completed assignment on my machine
+    2.  You ~~may~~ <u>should</u> work together to complete the assignments
 
-    7.  I will provide HW solutions after I have received everyone's assignment
+    3.  Everyone must turn-in their own work
+
+    4.  Completed homework assignments will be emailed to me as a .Rmd file
+
+    5.  I will compile the completed assignment on my machine
+
+    6.  I will provide HW solutions after I have received everyone's assignment
 
 Exams (33% of overall grade)
 ----------------------------
