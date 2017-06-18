@@ -7,8 +7,6 @@ Course Syllabus - Summer 2017
 MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
 </h3>
 
-<link rel="stylesheet" type="text/css" href="../syllabus/syllabus.css">
-
 -   [Welcome!](#welcome)
 -   [Course Learning Objectives](#course-learning-objectives)
 -   [Pre-requisites & Co-requisites](#pre-requisites-co-requisites)
@@ -261,5 +259,3 @@ Challenging your instructor can be a good thing. If you can't trip me up in this
 ### "How not to do Reliability"
 
 Industry provides many examples of how not to do reliability. Occasionally, we'll discuss these examples to highlight the result of applying poor reliability principles.
-
-a {font-weight: bold;}

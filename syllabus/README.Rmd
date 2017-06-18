@@ -4,11 +4,9 @@ author: '<h3>Course Syllabus - Summer 2017</h3>'
 date: '<h3>MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)</h3>'
 output: 
   github_document:
-    html_preview: yes
+    html_preview: no
     toc: true
     toc_depth: 2
-    includes: 
-      after_body: "syllabus.css"
 ---
 
 ## Welcome!
