@@ -23,7 +23,7 @@ Welcome!
 
 Welcome to STAT 687 - Math of Reliability. <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> The course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (a.k.a. survivability, time-to-event) data.
 
-![](./syllabus/class-graph.png)
+![](syllabus/class-graph.png)
 
 Course Learning Objectives
 --------------------------
