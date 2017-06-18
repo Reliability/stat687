@@ -12,20 +12,18 @@ MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
 -   [Pre-requisites & Co-requisites](#pre-requisites-co-requisites)
 -   [Instructor and Contact Information](#instructor-and-contact-information)
 -   [Course Resources (Required & Optional)](#course-resources-required-optional)
--   [Course Deliverables & Grading Policy](#course-deliverables-grading-policy)
+-   [Grading Policy & Course Deliverables](#grading-policy-course-deliverables)
 -   [Software/Computer Programming](#softwarecomputer-programming)
--   [Approximate Course Schedule (subject to change)](#approximate-course-schedule-subject-to-change)
+-   [Tentative Course Schedule](#tentative-course-schedule)
+-   [Important Policy Statements](#important-policy-statements)
 -   [Additional Notes](#additional-notes)
 
-<style>
-a {font-weight: bold;}
-</style>
 Welcome!
 --------
 
 Welcome to STAT 687 - Math of Reliability. <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> The course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (a.k.a. survivability, time-to-event) data.
 
-![](img/class-graph.png)
+![](./syllabus/class-graph.png)
 
 Course Learning Objectives
 --------------------------
@@ -73,8 +71,8 @@ Instructor and Contact Information
 ----------------------------------
 
 -   Maj. Jason Freels
--   Email: <a href="mailto:jason.freels@afit.edu" target="_top"><b><jason.freels@afit.edu></b></a>
--   Email: <a href="mailto:auburngrads@live.com" target="_top"><b><auburngrads@live.com></b></a>
+-   Email: [**jason.freels@afit.edu**](mailto:jason.freels@afit.edu)
+-   Email: [**auburngrads@live.com**](mailto:auburngrads@live.com)
 -   Phone: (937) 255-3636 ext. 4676
 -   Cell: (937) 430-6619
 -   Office: Bldg. 640, Rm. 205B
@@ -83,89 +81,40 @@ Instructor and Contact Information
 Course Resources (Required & Optional)
 --------------------------------------
 
-The required text for this course is [*Statistical Methods for Reliability Data*](https://www.amazon.com/Statistical-Methods-Reliability-William-Meeker/dp/0471143286) by [Bill Meeker](http://www.public.iastate.edu/~stat533/) and Luis Escobar. Although the first edition of this text was written in 1998, it is still regarded by many as the gold standard reference for advanced statistical methods for life-data analyses.
+The required text for this course is [***Statistical Methods for Reliability Data***](https://www.amazon.com/Statistical-Methods-Reliability-William-Meeker/dp/0471143286) by [**Bill Meeker**](http://www.public.iastate.edu/~stat533/) and Luis Escobar. Although the first edition of this text was written in 1998, it is still regarded by many as the gold standard reference for advanced statistical methods for life-data analyses.
 
-The M&E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis). While the S-Plus language is still in use, it has largely been replaced by R. Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida. By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete. In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package. The package has since been renamed `SMRD` and we hope to publish the it to the [CRAN](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
+The M&E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis). While the S-Plus language is still in use, it has largely been replaced by R. Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida. By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete. In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package. The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
 
 Some additional reliability textbooks are listed below. While these texts are not required for the course, they contain important material that complements the M & E text in many ways.
 
--   [Charles E. Ebeling](http://www.waveland.com/browse.php?t=392&pgtitle=An+Introduction+to+Reliability+and+Maintainability+Engineering%3A+Second+Edition+by+Charles+E.+Ebeling)<br>An Introduction to Reliability and Maintainability Engineering, 2nd ed., Waveland Press, Long Grove, IL 2010
+-   [**Charles E. Ebeling**](http://www.waveland.com/browse.php?t=392&pgtitle=An+Introduction+to+Reliability+and+Maintainability+Engineering%3A+Second+Edition+by+Charles+E.+Ebeling)<br>An Introduction to Reliability and Maintainability Engineering, 2nd ed., Waveland Press, Long Grove, IL 2010
 
--   [Marvin. Rausand and Arlnot Hoyland](http://bcs.wiley.com/he-bcs/Books?action=index&itemId=047147133X&bcsId=9457)<br>System Reliability Theory: Models, Statistical Methods & Applications 2nd ed., Wiley-Interscience, Hoboken, NJ 2004
+-   [**Marvin. Rausand and Arlnot Hoyland**](http://bcs.wiley.com/he-bcs/Books?action=index&itemId=047147133X&bcsId=9457)<br>System Reliability Theory: Models, Statistical Methods & Applications 2nd ed., Wiley-Interscience, Hoboken, NJ 2004
 
 In addition to the textbooks listed above, the following list contains references to more reliability resources that can be accessed online.
 
--   [Bill Meeker's Homepage](http://www.public.iastate.edu/~wqmeeker/homepage.html)
+-   [**Bill Meeker's Homepage**](http://www.public.iastate.edu/~wqmeeker/homepage.html)
 
--   [Weibull.com - Reliability Engineering Resource Website](http://www.weibull.com/)
+-   [**Weibull.com - Reliability Engineering Resource Website**](http://www.weibull.com/)
 
--   [Reliasoft Corporation Homepage](http://www.reliasoft.com/)
+-   [**Reliasoft Corporation Homepage**](http://www.reliasoft.com/)
 
--   [NIST/SEMATECH e-Handbook of Statistical Methods](http://itl.nist.gov/div898/handbook/)
+-   [**NIST/SEMATECH e-Handbook of Statistical Methods**](http://itl.nist.gov/div898/handbook/)
 
--   [Defense Systems Information Analysis Center](http://www.theriac.org/)
+-   [**Defense Systems Information Analysis Center**](http://www.theriac.org/)
 
--   [Army Material Systems Analysis Activity](http://web.amsaa.army.mil/home.html/)
+-   [**Army Material Systems Analysis Activity**](http://web.amsaa.army.mil/home.html/)
 
-Course Deliverables & Grading Policy
+Grading Policy & Course Deliverables
 ------------------------------------
 
-The following sections outline the deliverables for this course on which your grade will be based. For each item listed below you are expected to adhere to this institution's academic integrity policy, as expressed in the policy statement below.
+In this course, student grades are based on the following deliverables:
 
-**Academic Integrity Policy Statement:** All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: Student Handbook, ENOI 36 – 107, Academic Integrity)
+-   Homework (33% of the overall course grade)
+-   Exams (33% of the overall course grade)
+-   Final Project (33% of the overall course grade)
 
-### Homework (accounts for 33% of the overall course grade)
-
-Homework will be assigned throughout the course to help you learn the material. If you don't complete the assignments, you won't do well in the course. You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it. You may use any available resource to complete the assignments, however you must cite them. Homework will be graded on **<u>completeness</u>**, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see [Exams](#exams). Solutions will be posted after the assignments are turned in. Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
-
-Homework assignments will be distributed and collected using GitHub Classroom. This means that to complete the assignments each student will first need to create an account on [GitHub](https://github.com/), if they don't already have one.
-
-> Tip: Don't use your `awesome.student@afit.edu` email address to create your account. Use an address that you'll have access to after you graduate. Plus, you can always add your AFIT address as a secondary email.
-
-After you've created your account, click [HERE](https://github.com/Reliability/stat687/issues/1), read the instructions, and post your comment. The homework process in this class is as follows
-
-1.  Prior to the first assignment, each student will be assigned to a two or three person team on GitHub.
-
-2.  I'll create a private repository for each team. Each repo will contain an edit-able shell of the assignment
-
-3.  Teams will complete the assignment by entering your their into the shell
-
-4.  Completed homework assignments will be 'collected' on GitHub. (Once collected, teams will no longer have write access to the assignment repository)
-
-5.  I will compile the completed assignment on my machine
-
-6.  I will provide HW solutions after I have received everyone's assignment
-    \#\#\# Exams (accounts for 33% of the overall course grade) {\#exams}
-
-I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy for me to grade. After receiving your completed homework assignments, I will choose 3-4 exercises from the homework set to serve as exam questions. These selected exercises will be evaluated more rigorously than the others and grade will serve as your exam score. A comprehensive final exam take-home will be given during the final class meeting (due date TBD)
-
-### Final Project (accounts for 33% of the overall course grade)
-
--   The final project is intended to develop your skills in applying the reliability concepts learned in this course. The goal of the project is to perform a reliability analysis using a data set that you create. Exemptions may be made to allow the use of existing data sets on a case by case basis.
-
--   For this project you will...
-
-    -   Form teams of 2-3 and select a problem
-
-    -   Gather data
-
-    -   Analyze the data
-
-    -   Present your results to the class in a shiny presentation
-
--   The project has three milestones:
-
-    1.  Identify the problem and briefly describe what you plan to do<br>**Deliverable:** 2 paragrahs (informal)<br>  **Due Date:** End of Week 3
-
-    2.  Generate the data and run a preliminary analysis<br>**Deliverable:** 2 paragrahs (informal)<br>  **Due Date:** End of Week 7
-
-    3.  Present your results to the class<br>**Deliverable:** A shiny presentation (must have 1+ shiny apps and can have <u>no more</u> than <u>six slides</u>)<br>  **Due Date:** During the scheduled Finals time for this class
-
--   Your grade on the project will be based on the quality of your presentation and the quality of your analysis -- taking project difficulty into consideration. So, don't make the project too hard (duh) or too easy.
-
-### Grading
-
-Letter grades will be parsed out as listed below. This grading profile follows the the standard grading profile established by the institution.
+A student's final letter grade will be parsed out according to the table below. This grading profile follows the the standard grading profile established by the institution.
 
 -   (1.00 - 0.93\]: A
 -   (0.93 - 0.90\]: A-
@@ -174,12 +123,63 @@ Letter grades will be parsed out as listed below. This grading profile follows t
 -   (0.83 - 0.80\]: B-
 -   (0.80 - 0.77\]: C
 
-**Academic Grievance Policy Statement:** AFIT and the Graduate School of Engineering and Management affirm the right of each student to resolve grievances with the Institution. Students are guaranteed the right of fair hearing and appeal in all matters of judgment of academic performance. Procedures are detailed in ENOI 36 – 138, Student Academic Performance Appeals.
+The following sections detail the requirements associated with each deliverable.
+
+### Homework
+
+Homework will be assigned throughout the course to help you learn the material. If you don't complete the assignments, you won't do well in the course. You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it. You may use any available resource to complete the assignments, however you must cite them. Homework will be graded on <u>**completeness**</u>, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see <a href='#exams'>**Exams**</a>. Solutions will be posted after the assignments are turned in. Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
+
+Homework assignments will be distributed and collected using GitHub Classroom. Thus, to complete the assignments each student will first need to create an account on [**GitHub**](https://github.com/), if they don't already have one.
+
+> Tip: Don't use your `awesome.student@afit.edu` email address to create your account. Use an email address that you'll have access to after you graduate. If desired, you can add your AFIT address as a secondary email.
+
+After you've created your account on GitHub, click [**HERE**](https://github.com/Reliability/stat687/issues/1) to access the course "Roll Call." Read and follow the instructions to post your comment so that I know that you've successfully created an account.
+
+The homework process in this class is as follows
+
+1.  Prior to the first assignment, each student will be assigned to a two or three person team on GitHub.
+
+2.  For each assignment and each team I'll create a private repository containing an edit-able shell of the assignment.
+
+3.  Teams will complete the assignment by entering their work into the shell, along with any supplementary files.
+
+4.  On the assigned turn-in date, the completed homework assignments will be 'collected' on GitHub.
+
+5.  Once the assignment has been collected, teams will no longer have write access to the assignment repository.
+
+6.  Assignment solutions will be provided after each team's assignment has been completed.
+
+<a id=exams></a>
+
+### Exams
+
+I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy for me to grade. After receiving your completed homework assignments, I'll choose 3-4 exercises from each homework set to serve as exam questions. These selected exercises will be evaluated more rigorously than the others and the resulting grade on these exercises will serve as your exam score. A comprehensive final exam (take-home) will be given provided after the final class meeting (due date TBD).
+
+### Final Project
+
+The final project is intended to develop your skills in applying the reliability concepts learned in this course. The goal of the project is to work with your teams to perform a reliability analysis using a dataset that you find out in the wild. Your grade on the project will be based on the quality of the analysis and final outbrief -- taking project difficulty into consideration. So, don't make the project too hard (duh) or too easy. Each team's should select an unclassified, non-FOUO dataset from a military or industrial source. Good sources of such data are:
+
+-   Current or prior thesis projects
+-   Industrial studies (e.g. Samsung S7 failures, GM ignition switch failures)
+-   System performance test data (e.g. Tesla battery degradation)
+-   Analytics competition datasets (e.g. from Kaggle)
+
+The final project has the following three milestones, each of which are described below:
+
+1.  **Deliverable: data description**<br>**Due:** End of Week 3<br>**Purpose:** This deliverable serves to ensure that each team has identified a dataset that's appropriate for the project<br>**Format:** Two informal paragraphs describing your chosen dataset (i.e. Why was the dataset chosen? Where did you find it? What do you want to learn from your analysis?)
+
+2.  **Deliverable: Preliminary analysis**<br>**Due:** End of Week 7<br>**Purpose:** This deliverable serves as a sanity check to ensure your team is on track.<br>**Format:** By this point you should have performed a preliminary analysis of the data. Write two informal paragrahs describing your initial results and any problems encountered.
+
+3.  **Deliverable: Final outbrief**<br>**Due: During the scheduled Finals time for this class**<br>**Purpose:** Present the results of each team's analyses to the rest of the class<br>**Format:** An rmarkdown presentation containing no more than six content slides and at least one shiny application
 
 Software/Computer Programming
 -----------------------------
 
-A key component of this course is developing the skills and knowledge to create **reproducible & dynamic** data products to present results from your research. In previous offerings of this course, I allowed students to use any software package to complete their assignments. This became difficult, for the students to complete their work and for me to grade them. So, I've decided to require you to use the R programming language to complete and submit your assignments. Each of these tools listed below will be used this quarter:
+A key component of this course involves developing the skills and knowledge to create **reproducible & dynamic** data products to present results from your research. In previous offerings of this course, I allowed students to use any software package to complete their assignments. This became difficult, for the students to complete their work and for me to grade them. So, I've decided to require you to use the R programming language to complete and submit your assignments.
+
+I realize that some of you may be new to coding or may have never coded before. Don't worry, you don't need an extensive background in R or to be successful in this course. Each week I'll provide you with LOTS of code examples that you can copy/paste to help you get more familiar with the software. Also, many created several demo presentations to get you up to speed and I'm always willing to help out when needed. The [**first demo presentation**](https://afit.shinyapps.io/r-intro-installation) walks you through the process of getting the R/RStudio tool-chain installed and ready for the course.
+
+Each of these tools listed below will be used this quarter:
 
     + R Project for Statistical Computing
 
@@ -191,34 +191,28 @@ A key component of this course is developing the skills and knowledge to create 
 
     + HTML~5~, CSS3, and JavaScript (don't need to know these - already built in!)
 
--   I realize that some of you may be new to coding or may have never coded before. Don't worry, you don't need an extensive background in R or to be successful in this course. I've created several demo presentations to get you up to speed and I'm always willing to help out when needed. The **[first demo presentation](https://afit.shinyapps.io/r-intro-installation)** walks you through the process of getting the R/RStudio tool-chain installed and ready for the course.
+Tentative Course Schedule
+-------------------------
 
--   Throughout the course I'll be providing you with LOTS of code that you can copy/paste and use
+An approximate course schedule is listed below. Note that the schedule is tentative and therefor subject to change. Should it be necessary to make a change to this schedule, it will be clearly communicated by the instructor.
 
-Approximate Course Schedule (subject to change)
------------------------------------------------
-
-An approximate course schedule is listed below. Note that the schedule is subject to change, but all changes will be clearly communicated by the instructor. Regardless of schedule changes, students are expected to abide by this institution's attendance policy, which is provided in the statement shown below.
-
-**Attendance Policy Statement:** Attendance at all class sessions and exams is mandatory for military and civilians assigned to AFIT as full-time students except for extenuating circumstances. Part-time students are expected to attend scheduled classes, and absences should be explained to the instructor. The student should provide advance notice, if possible. Scheduled classes and exams are defined by the instructor and they are documented in the course schedule. (References: Student Handbook, Graduate School Catalog)
-
--   [Chapter 1: Reliability Concepts and Reliability Data](https://afit.shinyapps.io/smrd-chapter-1) (Week 1)
--   [Chapter 2: Models, Censoring and Likelihood for Time-to-Failure Data](https://afit.shinyapps.io/smrd-chapter-2) (Week 2)
--   [Chapter 3: Non Parametric Estimation](https://afit.shinyapps.io/smrd-chapter-3) (Week 2 - 3)
--   [Chapter 4: Failure-time Distributions](https://afit.shinyapps.io/smrd-chapter-4) (Week 4)
--   [Chapter 5: Failure-time Distributions](https://afit.shinyapps.io/smrd-chapter-5) (Week 4)
--   [Chapter 6: Probability Plotting and Choosing a Failure-Time Distribution](https://afit.shinyapps.io/smrd-chapter-6) (Week 4 - 5)
--   [Chapter 7: Parametric Likelihood Concepts: Exponential Distribution](https://afit.shinyapps.io/smrd-chapter-7) (Week 5)
--   [Chapter 8: Maximum Likelihood: Log-Location-Scale Based Distributions](https://afit.shinyapps.io/smrd-chapter-8) (Week 5 - Week 6)
--   [Chapter 9: Simulation-based (Bootstrap) Methods for Obtaining Confidence Intervals](https://afit.shinyapps.io/smrd-chapter-9) (Week 7)
--   [Chapter 10: Planning Studies to Obtain Reliability](https://afit.shinyapps.io/smrd-chapter-10) (Week 7)
--   [Chapter 11: Other Parametric Models](https://afit.shinyapps.io/smrd-chapter-11) (Week 7)
--   [Chapter 15: System Reliability Concepts; Data with Multiple Failure Modes](https://afit.shinyapps.io/smrd-chapter-15) (Week 8)
--   [Chapter 16: Analysis of Repairable System and Other Recurrence Data](https://afit.shinyapps.io/smrd-chapter-16) (Week 8)
--   [Chapter 17: Failure-Time Regression Analysis](https://afit.shinyapps.io/smrd-chapter-17) (Week 8 - Week 9)
--   [Chapter 18: Accelerated Test Models](https://afit.shinyapps.io/smrd-chapter-18) (Week 9)
--   [Chapter 19: Analyzing Accelerated Life Test Data](https://afit.shinyapps.io/smrd-chapter-19) (Week 9-10)
--   [Chapter 20: Planning Accelerated Life Tests](https://afit.shinyapps.io/smrd-chapter-20) (Week 10)
+-   [**Chapter 1: Reliability Concepts and Reliability Data**](https://afit.shinyapps.io/smrd-chapter-1) (Week 1)
+-   [**Chapter 2: Models, Censoring and Likelihood for Time-to-Failure Data**](https://afit.shinyapps.io/smrd-chapter-2) (Week 2)
+-   [**Chapter 3: Non Parametric Estimation**](https://afit.shinyapps.io/smrd-chapter-3) (Week 2 - 3)
+-   [**Chapter 4: Failure-time Distributions**](https://afit.shinyapps.io/smrd-chapter-4) (Week 4)
+-   [**Chapter 5: Failure-time Distributions**](https://afit.shinyapps.io/smrd-chapter-5) (Week 4)
+-   [**Chapter 6: Probability Plotting and Choosing a Failure-Time Distribution**](https://afit.shinyapps.io/smrd-chapter-6) (Week 4 - 5)
+-   [**Chapter 7: Parametric Likelihood Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7) (Week 5)
+-   [**Chapter 8: Maximum Likelihood: Log-Location-Scale Based Distributions**](https://afit.shinyapps.io/smrd-chapter-8) (Week 5 - Week 6)
+-   [**Chapter 9: Simulation-based (Bootstrap) Methods for Obtaining Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9) (Week 7)
+-   [**Chapter 10: Planning Studies to Obtain Reliability**](https://afit.shinyapps.io/smrd-chapter-10) (Week 7)
+-   [**Chapter 11: Other Parametric Models**](https://afit.shinyapps.io/smrd-chapter-11) (Week 7)
+-   [**Chapter 15: System Reliability Concepts; Data with Multiple Failure Modes**](https://afit.shinyapps.io/smrd-chapter-15) (Week 8)
+-   [**Chapter 16: Analysis of Repairable System and Other Recurrence Data**](https://afit.shinyapps.io/smrd-chapter-16) (Week 8)
+-   [**Chapter 17: Failure-Time Regression Analysis**](https://afit.shinyapps.io/smrd-chapter-17) (Week 8 - Week 9)
+-   [**Chapter 18: Accelerated Test Models**](https://afit.shinyapps.io/smrd-chapter-18) (Week 9)
+-   [**Chapter 19: Analyzing Accelerated Life Test Data**](https://afit.shinyapps.io/smrd-chapter-19) (Week 9-10)
+-   [**Chapter 20: Planning Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-20) (Week 10)
 
 ### Other Noteworthy Dates
 
@@ -233,6 +227,21 @@ In addition to the tentative course schedule shown above, you should take note o
 -   04 Sep - Labor Day (No Classes)
 -   05 Sep - Final Exams Begin
 -   08 Sep - Final Exams End
+
+Important Policy Statements
+---------------------------
+
+### Academic Integrity Policy Statement
+
+All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: Student Handbook, ENOI 36 â€“ 107, Academic Integrity)
+
+### Attendance Policy Statement
+
+Attendance at all class sessions and exams is mandatory for military and civilians assigned to AFIT as full-time students except for extenuating circumstances. Part-time students are expected to attend scheduled classes, and absences should be explained to the instructor. The student should provide advance notice, if possible. Scheduled classes and exams are defined by the instructor and they are documented in the course schedule. (References: Student Handbook, Graduate School Catalog)
+
+### Academic Grievance Policy Statement
+
+AFIT and the Graduate School of Engineering and Management affirm the right of each student to resolve grievances with the Institution. Students are guaranteed the right of fair hearing and appeal in all matters of judgment of academic performance. Procedures are detailed in ENOI 36 â€“ 138, Student Academic Performance Appeals.
 
 Additional Notes
 ----------------
