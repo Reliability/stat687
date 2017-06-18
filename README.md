@@ -7,7 +7,7 @@ Course Syllabus - Summer 2017
 MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
 </h3>
 
-<link rel="stylesheet" type="text/css"href="/syllabus/syllabus.css">
+<link rel="stylesheet" type="text/css" href="/syllabus/syllabus.css">
 
 -   [Welcome!](#welcome)
 -   [Course Learning Objectives](#course-learning-objectives)
