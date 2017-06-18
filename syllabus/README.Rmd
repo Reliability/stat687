@@ -8,7 +8,7 @@ output:
     toc: true
     toc_depth: 2
     includes: 
-      in_header: "syllabus.css"
+      after_body: "syllabus.css"
 ---
 
 ## Welcome!
