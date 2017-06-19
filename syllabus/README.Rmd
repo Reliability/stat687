@@ -11,7 +11,7 @@ output:
 
 ## Welcome!
 
-Welcome to `r rmarkdown::metadata$title`. <!--This course is part of the statistical engineering series on reliability and life-data analysis.-->  The course presents advanced statistical concepts for extracting decision-quality information from real-world reliability (a.k.a. survivability, time-to-event) data.
+Welcome to `r rmarkdown::metadata$title`! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.  Additionally, data analytics procedures are integrated throughout the course to  with the statistical methods,  students will learn learn to integrate analytics techniques with to extract decision-quality information from.
 
 ![](syllabus/class-graph.png)
 
@@ -21,7 +21,7 @@ After completing this course, students will:
 
 1. Thoroughly understand the basic concepts on which statistical methods for life-data analyses are based, specifically:
 
-    + How methods for life-data analyses differ from other statistical methods
+    + How life-data analysis methods differ from other statistical methods
     + The importance of statistical censoring
     + Differences between right, left, and interval censoring
     + Why all data is interval censored data
@@ -69,7 +69,7 @@ Requests to waive these required courses must be made in accordance AFIT EN poli
 
 The required text for this course is [***Statistical Methods for Reliability Data***](https://www.amazon.com/Statistical-Methods-Reliability-William-Meeker/dp/0471143286) by [**Bill Meeker**](http://www.public.iastate.edu/~stat533/) and Luis Escobar.  Although the first edition of this text was written in 1998, it is still regarded by many as the gold standard reference for advanced statistical methods for life-data analyses.  
 
-The M&E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis).  While the S-Plus language is still in use, it has largely been replaced by R.  Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida.  By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete.  In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package.  The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
+The M & E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis).  While the S-Plus language is still in use, it has largely been replaced by R.  Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida.  By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete.  In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package.  The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
 
 Some additional reliability textbooks are listed below.  While these texts are not required for the course, they contain important material that complements the M & E text in many ways.
 
