@@ -21,7 +21,7 @@ MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
 Welcome!
 --------
 
-Welcome to STAT 687 - Math of Reliability! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data. Additionally, data analytics procedures are integrated throughout the course to with the statistical methods, students will learn learn to integrate analytics techniques with to extract decision-quality information from.
+Welcome to STAT 687 - Math of Reliability! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.
 
 ![](syllabus/graph.png)
 
@@ -187,23 +187,29 @@ Course Schedule
 
 The course schedule shown below is **TENTATIVE** and is therefore subject to change. Note: changes to this schedule will be clearly communicated by the instructor.
 
--   Week 1: [**Chapter 1 - Reliability Concepts and Reliability Data**](https://afit.shinyapps.io/smrd-chapter-1)
--   Week 2: [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://afit.shinyapps.io/smrd-chapter-2)
--   Week 3: [**Chapter 3 - Nonparametric Estimation**](https://afit.shinyapps.io/smrd-chapter-3)
--   Week 4: [**Chapter 4 - Location-Scale-Based Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-4)
--   Week 4: [**Chapter 5 - Other Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-5)
--   Week 5: [**Chapter 6 - Probability Plotting**](https://afit.shinyapps.io/smrd-chapter-6)
--   Week 5: [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7)
--   Week 6: [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://afit.shinyapps.io/smrd-chapter-8)
--   Week 7: [**Chapter 9 - Bootstrap Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9)
--   Week 7: [**Chapter 10 - Planning Life Tests**](https://afit.shinyapps.io/smrd-chapter-10)
--   Week 7: [**Chapter 11 - Parametric Maximum Likelihood: Other Models**](https://afit.shinyapps.io/smrd-chapter-11)
--   Week 8: [**Chapter 15 - System Reliability Concepts and Methods**](https://afit.shinyapps.io/smrd-chapter-15)
--   Week 8: [**Chapter 16 - Analysis of Repairable System and Other Recurrence Data**](https://afit.shinyapps.io/smrd-chapter-16)
--   Week 9: [**Chapter 17 - Failure-Time Regression Analysis**](https://afit.shinyapps.io/smrd-chapter-17)
--   Week 9: [**Chapter 18 - Accelerated Test Models**](https://afit.shinyapps.io/smrd-chapter-18)
--   Week 10: [**Chapter 19 - Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-19)
--   Week 10: [**Chapter 20 - Planning Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-20)
+| Week | Topics.Presented                                                                                                               |
+|:-----|:-------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Introduction to R & rmarkdown                                                                                                  |
+|      | Introduction to Github                                                                                                         |
+|      | [**Chapter 1 - Reliability Concepts and Reliability Data**](https://afit.shinyapps.io/smrd-chapter-1)                          |
+| 2    | [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://afit.shinyapps.io/smrd-chapter-2)            |
+|      | [**Chapter 3 - Nonparametric Estimation**](https://afit.shinyapps.io/smrd-chapter-3)                                           |
+| 3    | [**Chapter 4 - Location-Scale-Based Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-4)                      |
+|      | [**Chapter 5 - Other Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-5)                                     |
+| 4    | [**Chapter 6 - Probability Plotting**](https://afit.shinyapps.io/smrd-chapter-6)                                               |
+|      | [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7)   |
+| 5    | [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://afit.shinyapps.io/smrd-chapter-8)            |
+|      | [**Chapter 9 - Bootstrap Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9)                                     |
+| 6    | [**Chapter 10 - Planning Life Tests**](https://afit.shinyapps.io/smrd-chapter-10)                                              |
+|      | [**Chapter 11 - Parametric Maximum Likelihood: Other Models**](https://afit.shinyapps.io/smrd-chapter-11)                      |
+| 7    | [**Chapter 12 - Prediction of Future Random Quantities**](https://afit.shinyapps.io/smrd-chapter-12)                           |
+|      | [**Chapter 13 - Degradation Data, Models and Data Analysis**](https://afit.shinyapps.io/smrd-chapter-13)                       |
+| 8    | [**Chapter 14 - Introduction to the Use of Bayesian Methods for Reliability Data**](https://afit.shinyapps.io/smrd-chapter-14) |
+|      | [**Chapter 15 - System Reliability Concepts and Methods**](https://afit.shinyapps.io/smrd-chapter-15)                          |
+| 9    | [**Chapter 17 - Failure-Time Regression Analysis**](https://afit.shinyapps.io/smrd-chapter-17)                                 |
+|      | [**Chapter 18 - Accelerated Test Models**](https://afit.shinyapps.io/smrd-chapter-18)                                          |
+| 10   | [**Chapter 19 - Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-19)                                           |
+|      | [**Chapter 20 - Planning Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-20)                                  |
 
 ### Other Noteworthy Dates
 

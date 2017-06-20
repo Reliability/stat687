@@ -16,7 +16,7 @@ root <- find_root(rprojroot::is_rstudio_project)
 
 ## Welcome!
 
-Welcome to `r rmarkdown::metadata$title`! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.  Additionally, data analytics procedures are integrated throughout the course to  with the statistical methods,  students will learn learn to integrate analytics techniques with to extract decision-quality information from.
+Welcome to `r rmarkdown::metadata$title`! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.
 
 ![](`r relative_to(root, file.path(root, 'syllabus', 'graph.png'))`)
 
@@ -180,28 +180,39 @@ Each of these tools listed below will be used this quarter:
 The course schedule shown below is **TENTATIVE** and is therefore subject to change.  Note: changes to this schedule will be clearly communicated by the instructor.
 
 ```{r, echo=FALSE}
-chap <- function(x) paste0('**',SMRD:::info(paste0('chapter',x)),'**' )
-link <- function(x) paste0('https://afit.shinyapps.io/smrd-chapter-',x)
-spot <- function(x) paste0('[',chap(x),'](',link(x),')')
-```
+chap <- function(x) {
+  
+  sapply(X = x,
+         FUN = function(y) {
+  Chap <- paste0('**',SMRD:::info(paste0('chapter',y)),'**' ) 
+  Link <- paste0('https://afit.shinyapps.io/smrd-chapter-',y)
+          paste0('[',Chap,'](',Link,')')
+         }) -> Both 
+  
+  return(Both)
+}
 
-- Week 1: `r spot(1)`
-- Week 2: `r spot(2)`
-- Week 3: `r spot(3)` 
-- Week 4: `r spot(4)`
-- Week 4: `r spot(5)`
-- Week 5: `r spot(6)`
-- Week 5: `r spot(7)`
-- Week 6: `r spot(8)`
-- Week 7: `r spot(9)`
-- Week 7: `r spot(10)`
-- Week 7: `r spot(11)`
-- Week 8: `r spot(15)`
-- Week 8: `r spot(16)`
-- Week 9: `r spot(17)`
-- Week 9: `r spot(18)`
-- Week 10: `r spot(19)`
-- Week 10: `r spot(20)`
+weeks <- list( 
+  
+week1  = c('Introduction to R & rmarkdown',
+           'Introduction to Github', 
+           chap(1)),
+week2  = chap(c(2,3)),
+week3  = chap(c(4,5)),
+week4  = chap(c(6,7)),
+week5  = chap(c(8,9)),
+week6  = chap(c(10,11)),
+week7  = chap(c(12,13)),
+week8  = chap(c(14,15)),
+week9  = chap(c(17,18)),
+week10 = chap(c(19,20)))
+
+sched <- data.frame(Week   = rep(1:length(weeks), lengths(weeks)),
+                    `Topics Presented` = unlist(weeks))
+dups <- duplicated(sched[,1]) 
+sched[dups,1] <- ''
+knitr::kable(sched, format = 'pandoc', row.names = F)
+```
 
 ### Other Noteworthy Dates
 
