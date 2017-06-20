@@ -18,7 +18,7 @@ root <- find_root(rprojroot::is_rstudio_project)
 
 Welcome to `r rmarkdown::metadata$title`! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.  Additionally, data analytics procedures are integrated throughout the course to  with the statistical methods,  students will learn learn to integrate analytics techniques with to extract decision-quality information from.
 
-![](`r file.path(root, 'syllabus', 'class-graph.png')`)
+![](`r relative_to(root, file.path(root, 'syllabus', 'graph.png'))`)
 
 ## Course Learning Objectives
 
@@ -76,7 +76,7 @@ The required text for this course is [***Statistical Methods for Reliability Dat
 
 The M & E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis).  While the S-Plus language is still in use, it has largely been replaced by R.  Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida.  By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete.  In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package.  The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
 
-Some additional reliability textbooks are listed below.  While these texts are not required for the course, they contain important material that complements the M & E text in many ways.
+Some additional reliability textbooks are listed below.  While these texts aren't required for the course, they contain important material that complements the M & E text in many ways.
 
 - [**Charles E. Ebeling**](http://www.waveland.com/browse.php?t=392&pgtitle=An+Introduction+to+Reliability+and+Maintainability+Engineering%3A+Second+Edition+by+Charles+E.+Ebeling)<br>An Introduction to Reliability and Maintainability Engineering, 2nd ed., Waveland Press, Long Grove, IL 2010
 
@@ -98,24 +98,22 @@ In addition to the textbooks listed above, the following list contains reference
 
 ## Grading Policy & Course Deliverables
 
-In this course, student grades are based on the following deliverables:
+In this course, grades will be assigned according to the values shown in the table below.  The following sections detail the requirements of each graded deliverable.
 
-- Homework (33% of the overall course grade)
-- Exams (33% of the overall course grade)
-- Final Project (33% of the overall course grade)
+```{r, echo=FALSE}
+numbs <- c('(1.00 - 0.93]','(0.93 - 0.90]',
+          '(0.90 - 0.87]','(0.87 - 0.83]',
+          '(0.83 - 0.80]','(0.80 - 0.77]')
+letrs <- c('A', 'A-', 'B+', 'B', 'B-', 'C')
+dats <- data.frame(numbs,letrs)
+colnames(dats) <- c('Numerical grade range',
+                    'Corresponding letter grade')
+knitr::kable(dats, 
+             caption = 'Grading rubric for the course',
+             format = 'markdown')
+```
 
-A student's final letter grade will be parsed out according to the table below.  This grading profile follows the the standard grading profile established by the institution. 
-
-- (1.00 - 0.93]: A
-- (0.93 - 0.90]: A-
-- (0.90 - 0.87]: B+
-- (0.87 - 0.83]: B
-- (0.83 - 0.80]: B-
-- (0.80 - 0.77]: C
-
-The following sections detail the requirements associated with each deliverable.
-
-### Homework
+### Homework (33% of the overall course grade)
 
 Homework will be assigned throughout the course to help you learn the material.  If you don't complete the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it.  You may use any available resource to complete the assignments, however you must cite them.  Homework will be graded on <u>**completeness**</u>, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see <a href='#exams'>**Exams**</a>.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
 
@@ -123,9 +121,9 @@ Homework assignments will be distributed and collected using GitHub Classroom.  
 
 > Tip: Don't use your `awesome.student@afit.edu` email address to create your account. Use an email address that you'll have access to after you graduate. If desired, you can add your AFIT address as a secondary email.
 
-After you've created your account on GitHub, click [**HERE**](https://github.com/Reliability/stat687/issues/1) to access the course "Roll Call."  Read and follow the instructions to post your comment so that I know that you've successfully created an account.  
+After you've created your account on GitHub, click [**HERE**](https://github.com/Reliability/stat687/issues/1) to access the course "Roll Call."  Read and follow the instructions to post your comment so I know that you've successfully created an account.  
 
-The homework process in this class is as follows
+The homework process in this class will be as follows
 
 1. Prior to the first assignment, each student will be assigned to a two or three person team on GitHub. 
     
@@ -133,28 +131,28 @@ The homework process in this class is as follows
 
 3. Teams will complete the assignment by entering their work into the shell, along with any supplementary files.
 
-4. On the assigned turn-in date, the completed homework assignments will be 'collected' on GitHub.  
+4. On the assigned turn-in date, the each team's completed homework assignments will be 'collected' on GitHub.  
 
-5. Once the assignment has been collected, teams will no longer have write access to the assignment repository.
+5. Once all of the assignments have been collected, teams will no longer have write access to the assignment repository (you'll still have read access).
 
-6. Assignment solutions will be provided after each team's assignment has been completed.
+6. Assignment solutions will be posted to the repository.
 
 <a id=exams></a>
 
-### Exams
+### Exams (33% of the overall course grade)
 
-I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy for me to grade.  After receiving your completed homework assignments, I'll choose 3-4 exercises from each homework set to serve as exam questions.  These selected exercises will be evaluated more rigorously than the others and the resulting grade on these exercises will serve as your exam score.  A comprehensive final exam (take-home) will be given provided after the final class meeting (due date TBD).
+I've chosen to modify the standard exam process in a way that I believe is (1) fair to you and (2) easy for me to grade.  After receiving your completed homework assignments, I'll choose 3-4 exercises from each homework set to serve as exam questions.  These selected exercises will be evaluated more closely than the others and the resulting grade on these exercises will serve as your exam score.  A comprehensive final exam (take-home) will be given after the final class meeting (due date TBD).
 
-### Final Project
+### Final Project (33% of the overall course grade)
 
-The final project is intended to develop your skills in applying the reliability concepts learned in this course.  The goal of the project is to work with your teams to perform a reliability analysis using a dataset that you find out in the wild.  Your grade on the project will be based on the quality of the analysis and final outbrief -- taking project difficulty into consideration.  So, don't make the project too hard (duh) or too easy.  Each team's should select an unclassified, non-FOUO dataset from a military or industrial source. Good sources of such data are:
+The final project is intended to develop your skills in applying the reliability concepts learned in this course.  The goal of the project is to work with your teams to perform a reliability analysis using a dataset that you find out in the wild.  Your grade on the project will be based on the quality of the analysis and final outbrief -- taking project difficulty into consideration.  So, don't make the project too hard (duh) or too easy.  Each team should select an unclassified, non-FOUO dataset, good sources of such data are:
 
 - Current or prior thesis projects
 - Industrial studies (e.g. Samsung S7 failures, GM ignition switch failures)
 - System performance test data (e.g. Tesla battery degradation) 
 - Analytics competition datasets (e.g. from Kaggle)
 
-The final project has the following three milestones, each of which are described below:
+The final project has the following milestones:
 
 1. **Deliverable: data description**<br>**Due:** End of Week 3<br>**Purpose:** This deliverable serves to ensure that each team has identified a dataset that's appropriate for the project<br>**Format:** Two informal paragraphs describing your chosen dataset (i.e. Why was the dataset chosen? Where did you find it? What do you want to learn from your analysis?)
     
@@ -171,18 +169,15 @@ I realize that some of you may be new to coding or may have never coded before. 
 Each of these tools listed below will be used this quarter:
 
     + R Project for Statistical Computing
-    
     + RStudio IDE
-
+    + Git/Github
     + Mathjax
-
     + Pandoc Markdown
-
     + HTML~5~, CSS3, and JavaScript (don't need to know these - already built in!)
 
-## Tentative Course Schedule
+## Course Schedule
 
-An approximate course schedule is listed below.  Note that the schedule is tentative and therefor subject to change.  Should it be necessary to make a change to this schedule, it will be clearly communicated by the instructor.
+The course schedule shown below is **TENTATIVE** and is therefore subject to change.  Note: changes to this schedule will be clearly communicated by the instructor.
 
 ```{r, echo=FALSE}
 chap <- function(x) paste0('**',SMRD:::info(paste0('chapter',x)),'**' )
@@ -210,7 +205,7 @@ spot <- function(x) paste0('[',chap(x),'](',link(x),')')
 
 ### Other Noteworthy Dates
 
-In addition to the tentative course schedule, you should take note of the dates listed below.
+In addition to the course schedule, you should take note of the following dates.
 
 - 03 Jul - AETC Family Day (No Classes)
 - 04 Jul - Indenpendence Day (No Classes)
