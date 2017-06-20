@@ -175,12 +175,12 @@ I realize that some of you may be new to coding or may have never coded before. 
 
 Each of these tools listed below will be used this quarter:
 
-    + R Project for Statistical Computing
-    + RStudio IDE
-    + Git/Github
-    + Mathjax
-    + Pandoc Markdown
-    + HTML~5~, CSS3, and JavaScript (don't need to know these - already built in!)
+-   R Project for Statistical Computing
+-   RStudio IDE
+-   Git/Github
+-   Mathjax
+-   Pandoc Markdown
+-   HTML<sub>5</sub>, CSS3, and JavaScript (don't need to know these - already built in!)
 
 Course Schedule
 ---------------
