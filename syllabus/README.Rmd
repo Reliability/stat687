@@ -185,23 +185,23 @@ link <- function(x) paste0('https://afit.shinyapps.io/smrd-chapter-',x)
 spot <- function(x) paste0('[',chap(x),'](',link(x),')')
 ```
 
-- `r spot(1)`  (Week 1)
-- `r spot(2)`  (Week 2)
-- `r spot(3)`  (Week 2/3)
-- `r spot(4)`  (Week 4)
-- `r spot(5)`  (Week 4)
-- `r spot(6)`  (Week 4/5)
-- `r spot(7)`  (Week 5)
-- `r spot(8)`  (Week 5/6)
-- `r spot(9)`  (Week 7)
-- `r spot(10)` (Week 7)
-- `r spot(11)` (Week 7)
-- `r spot(15)` (Week 8)
-- `r spot(16)` (Week 8)
-- `r spot(17)` (Week 8/9)
-- `r spot(18)` (Week 9)
-- `r spot(19)` (Week 9/10)
-- `r spot(20)` (Week 10)
+- Week 1: `r spot(1)`
+- Week 2: `r spot(2)`
+- Week 3: `r spot(3)` 
+- Week 4: `r spot(4)`
+- Week 4: `r spot(5)`
+- Week 5: `r spot(6)`
+- Week 5: `r spot(7)`
+- Week 6: `r spot(8)`
+- Week 7: `r spot(9)`
+- Week 7: `r spot(10)`
+- Week 7: `r spot(11)`
+- Week 8: `r spot(15)`
+- Week 8: `r spot(16)`
+- Week 9: `r spot(17)`
+- Week 9: `r spot(18)`
+- Week 10: `r spot(19)`
+- Week 10: `r spot(20)`
 
 ### Other Noteworthy Dates
 
