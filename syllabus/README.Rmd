@@ -4,16 +4,21 @@ author: '<h3>Course Syllabus - Summer 2017</h3>'
 date: '<h3>MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)</h3>'
 output: 
   github_document:
-    html_preview: no
+    html_preview: yes
     toc: true
     toc_depth: 2
 ---
+
+```{r, echo=FALSE}
+needs::needs(rmarkdown, knitr, rprojroot)
+root <- find_root(rprojroot::is_rstudio_project)
+```
 
 ## Welcome!
 
 Welcome to `r rmarkdown::metadata$title`! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.  Additionally, data analytics procedures are integrated throughout the course to  with the statistical methods,  students will learn learn to integrate analytics techniques with to extract decision-quality information from.
 
-![](syllabus/class-graph.png)
+![](`r file.path(root, 'syllabus', 'class-graph.png')`)
 
 ## Course Learning Objectives
 
@@ -179,27 +184,33 @@ Each of these tools listed below will be used this quarter:
 
 An approximate course schedule is listed below.  Note that the schedule is tentative and therefor subject to change.  Should it be necessary to make a change to this schedule, it will be clearly communicated by the instructor.
 
-- [**Chapter  1: Reliability Concepts and Reliability Data**](https://afit.shinyapps.io/smrd-chapter-1) (Week 1)
-- [**Chapter  2: Models, Censoring and Likelihood for Time-to-Failure Data**](https://afit.shinyapps.io/smrd-chapter-2) (Week 2)
-- [**Chapter  3: Non Parametric Estimation**](https://afit.shinyapps.io/smrd-chapter-3) (Week 2 - 3)
-- [**Chapter  4: Failure-time Distributions**](https://afit.shinyapps.io/smrd-chapter-4) (Week 4)
-- [**Chapter  5: Failure-time Distributions**](https://afit.shinyapps.io/smrd-chapter-5) (Week 4)
-- [**Chapter  6: Probability Plotting and Choosing a Failure-Time Distribution**](https://afit.shinyapps.io/smrd-chapter-6) (Week 4 - 5)
-- [**Chapter  7: Parametric Likelihood Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7) (Week 5)
-- [**Chapter  8: Maximum Likelihood: Log-Location-Scale Based Distributions**](https://afit.shinyapps.io/smrd-chapter-8) (Week 5 - Week 6)
-- [**Chapter  9: Simulation-based (Bootstrap) Methods for Obtaining Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9) (Week 7)
-- [**Chapter 10: Planning Studies to Obtain Reliability**](https://afit.shinyapps.io/smrd-chapter-10) (Week 7)
-- [**Chapter 11: Other Parametric Models**](https://afit.shinyapps.io/smrd-chapter-11) (Week 7)
-- [**Chapter 15: System Reliability Concepts; Data with Multiple Failure Modes**](https://afit.shinyapps.io/smrd-chapter-15) (Week 8)
-- [**Chapter 16: Analysis of Repairable System and Other Recurrence Data**](https://afit.shinyapps.io/smrd-chapter-16) (Week 8)
-- [**Chapter 17: Failure-Time Regression Analysis**](https://afit.shinyapps.io/smrd-chapter-17) (Week 8 - Week 9)
-- [**Chapter 18: Accelerated Test Models**](https://afit.shinyapps.io/smrd-chapter-18) (Week 9)
-- [**Chapter 19: Analyzing Accelerated Life Test Data**](https://afit.shinyapps.io/smrd-chapter-19) (Week 9-10)
-- [**Chapter 20: Planning Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-20) (Week 10)
+```{r, echo=FALSE}
+chap <- function(x) paste0('**',SMRD:::info(paste0('chapter',x)),'**' )
+link <- function(x) paste0('https://afit.shinyapps.io/smrd-chapter-',x)
+spot <- function(x) paste0('[',chap(x),'](',link(x),')')
+```
+
+- `r spot(1)`  (Week 1)
+- `r spot(2)`  (Week 2)
+- `r spot(3)`  (Week 2/3)
+- `r spot(4)`  (Week 4)
+- `r spot(5)`  (Week 4)
+- `r spot(6)`  (Week 4/5)
+- `r spot(7)`  (Week 5)
+- `r spot(8)`  (Week 5/6)
+- `r spot(9)`  (Week 7)
+- `r spot(10)` (Week 7)
+- `r spot(11)` (Week 7)
+- `r spot(15)` (Week 8)
+- `r spot(16)` (Week 8)
+- `r spot(17)` (Week 8/9)
+- `r spot(18)` (Week 9)
+- `r spot(19)` (Week 9/10)
+- `r spot(20)` (Week 10)
 
 ### Other Noteworthy Dates
 
-In addition to the tentative course schedule shown above, you should take note of the dates listed below.
+In addition to the tentative course schedule, you should take note of the dates listed below.
 
 - 03 Jul - AETC Family Day (No Classes)
 - 04 Jul - Indenpendence Day (No Classes)
@@ -235,7 +246,7 @@ As __AFIT instructors__, we do a disservice to our students by not teaching new 
 
 ### Challenge your instructor
 
-Challenging your instructor can be a good thing.  If you can't trip me up in this class from time to time, you're not trying.  Discussion leads to a more interesting class, so questions are always good.
+Challenging your instructor can often be a good thing.  If you can't trip me up in this class from time to time, you're not trying.  Discussion leads to a more interesting class, so questions are always good.
 
 ### "How not to do Reliability"
 
