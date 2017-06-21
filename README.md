@@ -4,7 +4,7 @@ STAT 687 - Math of Reliability
 Course Syllabus - Summer 2017
 </h3>
 <h3>
-MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
+MTWF 0900-1000 Bldg. 641 Rm. 228 (4.0 Credit Hours)
 </h3>
 
 -   [Welcome!](#welcome)
@@ -21,7 +21,7 @@ MTWF 1000-1100 Bldg. 646 Rm. 220 (4.0 Credit Hours)
 Welcome!
 --------
 
-Welcome to STAT 687 - Math of Reliability! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of advanced statistical methods used to analyze real-world reliability data.
+Welcome to STAT 687 - Math of Reliability! <!--This course is part of the statistical engineering series on reliability and life-data analysis.--> This course presents the theory and application of statistical methods used to analyze reliability & survivability data. To accomplish this we'll integrate <font color='#77BFC7'>**real-world data**</font>, <font color='#99c68e'>**advanced statistical concepts**</font>, and <font color='#BCE954'>**data analytics**</font> software tools. <br/>
 
 ![](syllabus/graph.png)
 
@@ -93,17 +93,19 @@ Some additional reliability textbooks are listed below. While these texts aren't
 
 In addition to the textbooks listed above, the following list contains references to more reliability resources that can be accessed online.
 
--   [**Bill Meeker's Homepage**](http://www.public.iastate.edu/~wqmeeker/homepage.html)
+-   [**CRAN Task View: Suvival Analysis**](https://cran.r-project.org/web/views/Survival.html)<br>Large index of R packages related to reliability/survivability analysis
 
--   [**Weibull.com - Reliability Engineering Resource Website**](http://www.weibull.com/)
+-   [**Bill Meeker's Homepage**](http://www.public.iastate.edu/~wqmeeker/homepage.html)<br> Additional materials to support the text
 
--   [**Reliasoft Corporation Homepage**](http://www.reliasoft.com/)
+-   [**Weibull.com - Reliability Engineering Resource **](http://www.weibull.com/)<br>Website devoted to Reliability Engineering, reliability theory, and reliability data analysis & modeling
 
--   [**NIST/SEMATECH e-Handbook of Statistical Methods**](http://itl.nist.gov/div898/handbook/)
+-   [**Reliasoft Corporation Homepage**](http://www.reliasoft.com/)<br> Reference materials for the Reliasoft suite of software tools
 
--   [**Defense Systems Information Analysis Center**](http://www.theriac.org/)
+-   [**NIST/SEMATECH e-Handbook of Statistical Methods**](http://itl.nist.gov/div898/handbook/)<br> Enormous reference guide on many statistical methods
 
--   [**Army Material Systems Analysis Activity**](http://web.amsaa.army.mil/home.html/)
+-   [**Defense Systems Information Analysis Center**](http://www.dsiac.org/)<br>DoD resource for leveraging the expertise and knowledge from government agencies, research laboratories, and academia to help solve the toughest scientific problems of the Defense Systems community
+
+-   [**Army Material Systems Analysis Activity (AMSAA)**](http://web.amsaa.army.mil/home.html/)<br>Army Material Command organization conducting critical analyses to provide state-of-the-art solutions.
 
 Grading Policy & Course Deliverables
 ------------------------------------
@@ -185,31 +187,37 @@ Each of these tools listed below will be used this quarter:
 Course Schedule
 ---------------
 
-The course schedule shown below is **TENTATIVE** and is therefore subject to change. Note: changes to this schedule will be clearly communicated by the instructor.
+The course schedule below is **TENTATIVE** and is therefore subject to change. Any changes made to this schedule will be clearly communicated by the instructor.
 
 | Week | Topics.Presented                                                                                                               |
 |:-----|:-------------------------------------------------------------------------------------------------------------------------------|
-| 1    | Introduction to R & rmarkdown                                                                                                  |
+| 1    | Introduction to R                                                                                                              |
+|      | Introduction to Literate Programming with `rmarkdown`                                                                          |
 |      | Introduction to Github                                                                                                         |
 |      | [**Chapter 1 - Reliability Concepts and Reliability Data**](https://afit.shinyapps.io/smrd-chapter-1)                          |
 | 2    | [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://afit.shinyapps.io/smrd-chapter-2)            |
 |      | [**Chapter 3 - Nonparametric Estimation**](https://afit.shinyapps.io/smrd-chapter-3)                                           |
 | 3    | [**Chapter 4 - Location-Scale-Based Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-4)                      |
 |      | [**Chapter 5 - Other Parametric Distributions**](https://afit.shinyapps.io/smrd-chapter-5)                                     |
-| 4    | [**Chapter 6 - Probability Plotting**](https://afit.shinyapps.io/smrd-chapter-6)                                               |
-|      | [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7)   |
-| 5    | [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://afit.shinyapps.io/smrd-chapter-8)            |
-|      | [**Chapter 9 - Bootstrap Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9)                                     |
-| 6    | [**Chapter 10 - Planning Life Tests**](https://afit.shinyapps.io/smrd-chapter-10)                                              |
+| 4    | Project Review 1                                                                                                               |
+|      | [**Chapter 6 - Probability Plotting**](https://afit.shinyapps.io/smrd-chapter-6)                                               |
+| 5    | [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://afit.shinyapps.io/smrd-chapter-7)   |
+|      | [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://afit.shinyapps.io/smrd-chapter-8)            |
 |      | [**Chapter 11 - Parametric Maximum Likelihood: Other Models**](https://afit.shinyapps.io/smrd-chapter-11)                      |
+| 6    | [**Chapter 9 - Bootstrap Confidence Intervals**](https://afit.shinyapps.io/smrd-chapter-9)                                     |
+|      | [**Chapter 10 - Planning Life Tests**](https://afit.shinyapps.io/smrd-chapter-10)                                              |
 | 7    | [**Chapter 12 - Prediction of Future Random Quantities**](https://afit.shinyapps.io/smrd-chapter-12)                           |
-|      | [**Chapter 13 - Degradation Data, Models and Data Analysis**](https://afit.shinyapps.io/smrd-chapter-13)                       |
-| 8    | [**Chapter 14 - Introduction to the Use of Bayesian Methods for Reliability Data**](https://afit.shinyapps.io/smrd-chapter-14) |
+|      | [**Chapter 14 - Introduction to the Use of Bayesian Methods for Reliability Data**](https://afit.shinyapps.io/smrd-chapter-14) |
+| 8    | Project Review 2                                                                                                               |
+|      | Introduction to Shiny                                                                                                          |
 |      | [**Chapter 15 - System Reliability Concepts and Methods**](https://afit.shinyapps.io/smrd-chapter-15)                          |
 | 9    | [**Chapter 17 - Failure-Time Regression Analysis**](https://afit.shinyapps.io/smrd-chapter-17)                                 |
 |      | [**Chapter 18 - Accelerated Test Models**](https://afit.shinyapps.io/smrd-chapter-18)                                          |
 | 10   | [**Chapter 19 - Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-19)                                           |
 |      | [**Chapter 20 - Planning Accelerated Life Tests**](https://afit.shinyapps.io/smrd-chapter-20)                                  |
+|      | Course Review                                                                                                                  |
+| 11   | Project Out-Briefs                                                                                                             |
+|      | Final Exams Due                                                                                                                |
 
 ### Other Noteworthy Dates
 
@@ -222,23 +230,23 @@ In addition to the course schedule, you should take note of the following dates.
 -   31 Aug - Summer Quarter Classes End
 -   01 Sep - AETC Family Day (No Classes)
 -   04 Sep - Labor Day (No Classes)
--   05 Sep - Final Exams Begin
--   08 Sep - Final Exams End
+-   05 Sep - Final Exam Week Begins
+-   08 Sep - Final Exam Week Ends
 
 Important Policy Statements
 ---------------------------
 
 ### Academic Integrity Policy Statement
 
-All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: Student Handbook, ENOI 36 â€“ 107, Academic Integrity)
+All students must adhere to the highest standards of academic integrity. Students are prohibited from engaging in plagiarism, cheating, misrepresentation, or any other act constituting a lack of academic integrity. Failure on the part of any individual to practice academic integrity is not condoned and will not be tolerated. Individuals who violate this policy are subject to adverse administrative action including disenrollment from school and disciplinary action. Individuals subject to the Uniform Code of Military Justice may be prosecuted under the UCMJ. Violations by government civilian employees may result in administrative disciplinary action without regard to otherwise applicable criminal or civil sanctions for violations of related laws. (References: ***Student Handbook, ENOI 36-107, Academic Integrity***)
 
 ### Attendance Policy Statement
 
-Attendance at all class sessions and exams is mandatory for military and civilians assigned to AFIT as full-time students except for extenuating circumstances. Part-time students are expected to attend scheduled classes, and absences should be explained to the instructor. The student should provide advance notice, if possible. Scheduled classes and exams are defined by the instructor and they are documented in the course schedule. (References: Student Handbook, Graduate School Catalog)
+Attendance at all class sessions and exams is mandatory for military and civilians assigned to AFIT as full-time students except for extenuating circumstances. Part-time students are expected to attend scheduled classes, and absences should be explained to the instructor. The student should provide advance notice, if possible. Scheduled classes and exams are defined by the instructor and they are documented in the course schedule. (References: ***Student Handbook, Graduate School Catalog***)
 
 ### Academic Grievance Policy Statement
 
-AFIT and the Graduate School of Engineering and Management affirm the right of each student to resolve grievances with the Institution. Students are guaranteed the right of fair hearing and appeal in all matters of judgment of academic performance. Procedures are detailed in ENOI 36 â€“ 138, Student Academic Performance Appeals.
+AFIT and the Graduate School of Engineering and Management affirm the right of each student to resolve grievances with the Institution. Students are guaranteed the right of fair hearing and appeal in all matters of judgment of academic performance. Procedures are detailed in ***ENOI 36-138, Student Academic Performance Appeals***.
 
 Additional Notes
 ----------------
