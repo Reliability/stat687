@@ -89,7 +89,7 @@ In addition to the textbooks listed above, the following list contains reference
 
 - [**Bill Meeker's Homepage**](http://www.public.iastate.edu/~wqmeeker/homepage.html)<br> Additional materials to support the text
 
-- [**Weibull.com - Reliability Engineering Resource **](http://www.weibull.com/)<br>Website devoted to Reliability Engineering, reliability theory, and reliability data analysis & modeling 
+- [**Weibull.com - Reliability Engineering Resource**](http://www.weibull.com/)<br>Website devoted to Reliability Engineering, reliability theory, and reliability data analysis & modeling 
 
 - [**Reliasoft Corporation Homepage**](http://www.reliasoft.com/)<br> Reference materials for the Reliasoft suite of software tools 
 
