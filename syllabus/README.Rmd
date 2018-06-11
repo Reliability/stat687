@@ -1,6 +1,6 @@
 ---
 title: 'STAT 687 - Math of Reliability'
-author: '<h3>Course Syllabus - Summer 2017</h3>'
+author: '<h3>Course Syllabus - Summer 2018</h3>'
 date: '<h3>MTWF 0900-1000 Bldg. 641 Rm. 228 (4.0 Credit Hours)</h3>'
 output: 
   github_document:
@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r, echo=FALSE}
-needs::needs(rmarkdown, knitr, rprojroot)
+pacman::p_load(rmarkdown, knitr, rprojroot)
 root <- find_root(rprojroot::is_rstudio_project)
 ```
 
@@ -44,7 +44,7 @@ After completing this course, students will:
 
     + How compute estimates for parameters and functions of parameters from data
     + How to compute confidence intervals and credible intervals for parameters and functions of parameters from data
-    + The value of the Delta method for an arbitrary function
+    + How to apply the Delta method to compute uncertainty propagation for an arbitrary function of the parameters
     + Advantages and disadvantages between various procedures used to compute confidence intervals
 
 4. Use software to analyze real-world reliability data and communicate the results of their analyses, specifically:
@@ -59,7 +59,7 @@ Unless otherwise waived by the course instructor, students are required to have 
 
 - STAT 602
 
-Requests to waive these required courses must be made in accordance AFIT EN policy guidelines and must be approved by the course instructor.  Waivers my be approved for students that have has successfully completed a similar courses or if special arrangements are made to meet AFIT requirements 
+Requests to waive these required courses must be made in accordance with AFIT EN policy guidelines and must be approved by the course instructor.  Waivers my be approved for students that have has successfully completed a similar courses or if special arrangements are made to meet AFIT requirements.
 
 ## Instructor and Contact Information
 
@@ -75,9 +75,9 @@ Requests to waive these required courses must be made in accordance AFIT EN poli
 
 The required text for this course is [***Statistical Methods for Reliability Data***](https://www.amazon.com/Statistical-Methods-Reliability-William-Meeker/dp/0471143286) by [**Bill Meeker**](http://www.public.iastate.edu/~stat533/) and Luis Escobar.  Although the first edition of this text was written in 1998, it is still regarded by many as the gold standard reference for advanced statistical methods for life-data analyses.  
 
-The M & E text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis).  While the S-Plus language is still in use, it has largely been replaced by R.  Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida.  By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete.  In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package.  The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
+The Meeker and Escobar text references a well executed software, called SPLIDA, that was originally written in the S-Plus language (SPLIDA stands for S Plus Life Data Anaysis).  While the S-Plus language is still in use, it has largely been replaced by R.  Thus, Dr. Meeker started work on an alpha version of the SPLIDA package, modified to run in R, called RSplida.  By Dr. Meeker's own admission, the effort to port SPLIDA to the R language was rushed and incomplete.  In 2015, I began working with Dr. Meeker to finish updating RSplida to an R package.  The package has since been renamed `SMRD` and we hope to publish the it to the [**CRAN**](https://cran.r-project.org/) in 2018. The `SMRD` package is based on the textbook and will be used throughout this course.
 
-Some additional reliability textbooks are listed below.  While these texts aren't required for the course, they contain important material that complements the M & E text in many ways.
+Some additional reliability textbooks are listed below.  While these texts aren't required for the course, they contain important material that complements the Meeker and Escobar text in many ways.
 
 - [**Charles E. Ebeling**](http://www.waveland.com/browse.php?t=392&pgtitle=An+Introduction+to+Reliability+and+Maintainability+Engineering%3A+Second+Edition+by+Charles+E.+Ebeling)<br>An Introduction to Reliability and Maintainability Engineering, 2nd ed., Waveland Press, Long Grove, IL 2010
 
@@ -118,7 +118,7 @@ knitr::kable(dats,
 
 ### Homework (33% of the overall course grade)
 
-Homework will be assigned throughout the course to help you learn the material.  If you don't complete the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's, so don't do it.  You may use any available resource to complete the assignments, however you must cite them.  Homework will be graded on <u>**completeness**</u>, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see <a href='#exams'>**Exams**</a>.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
+Homework will be assigned throughout the course to help you learn the material.  If you don't complete the assignments, you won't do well in the course.  You're encouraged to work together on the homework assignments, but you won't learn much from copying someone else's work, so don't do it.  You may use any available resource to complete the assignments, however you must cite them.  Homework will be graded on <u>**completeness**</u>, (i.e. full credit will be given when a "complete" attempt to each problem is made) with one caveat, see <a href='#exams'>**Exams**</a>.  Solutions will be posted after the assignments are turned in.  Questions to the instructor, both in class and during office hours, are welcomed and encouraged.
 
 Homework assignments will be distributed and collected using GitHub Classroom.  Thus, to complete the assignments each student will first need to create an account on [**GitHub**](https://github.com/), if they don't already have one. 
 
@@ -128,7 +128,7 @@ After you've created your account on GitHub, click [**HERE**](https://github.com
 
 The homework process in this class will be as follows
 
-1. Prior to the first assignment, each student will be assigned to a two or three person team on GitHub. 
+1. Prior to the first assignment, each student will be assigned to a two or three-person team on GitHub. 
     
 2. For each assignment and each team I'll create a private repository containing an edit-able shell of the assignment.
 
