@@ -1,4 +1,4 @@
-needs::needs(rmarkdown, rprojroot)
+pacman::p_load(rmarkdown, rprojroot)
 root <- rprojroot::find_rstudio_root_file()
 
 rmarkdown::render(file.path(root,'syllabus','README.Rmd'),
