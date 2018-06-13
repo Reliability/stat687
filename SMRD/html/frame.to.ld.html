@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a 'life.data' object from a 'data.frame'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for frame.to.ld {SMRD}"><tr><td>frame.to.ld {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Create a <code>life.data</code> object from a <code>data.frame</code></h2>
+
+<h3>Description</h3>
+
+<p>Create a <code>life.data</code> object from a <code>data.frame</code>
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+frame.to.ld(frame, response.column, censor.column, case.weight.column,
+  failure.mode.column, truncation.type.column, truncation.response.column,
+  time.units = names.the.frame[response.column[1]], x.columns = NULL,
+  xlabel = NULL, data.title = deparse(substitute(frame)), data.note = "",
+  func.call = match.call(), residual.rmd = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>frame</code></td>
+<td>
+<p>A <code>data.frame</code> class object.</p>
+</td></tr>
+<tr valign="top"><td><code>response.column</code></td>
+<td>
+<p>The numeric index or name (as a character string) of the column(s) in <code>frame</code> containing the responses.
+</p>
+<p>For reliability data, responses are often the amount of usage (measured in time, distance, cycles) that are recorded when an event occurred.
+</p>
+<p>Events for which responses should be recorded include when one or more units fail or are censored. If the responses are recorded as an interval (i.e. an event occurs between a and b), <code>response.column</code> will accept vector arguments.</p>
+</td></tr>
+<tr valign="top"><td><code>censor.column</code></td>
+<td>
+<p>The numeric index or name (as a character string) of the column in <code>frame</code> that contains the type(s) of censoring (exact failures, right-censoring, left-censoring, interval censoring) occurring at each event.
+</p>
+<p>In practice, several different labels are used to refer to differnt types of censoring.  <code>frame.to.ld</code> can accept many of these different labels.  To view the list of see <code>SMRDOptionsDefaults</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>case.weight.column</code></td>
+<td>
+<p>The numeric index or name (as a character string) of the column in <code>frame</code> containing the number of events occurring at each entry in the <code>response.column</code>.
+<b>(optional)</b> This column may be left undefined, in which case it will be assumed that only one unit was observed to have failed/censored for each entry in <code>response.column</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>failure.mode.column</code></td>
+<td>
+<p>The numeric index or name (as a character string) of the column in <code>frame</code> containing the type(s) of failure modes observed.
+<b>(optional)</b> This column may be left undefined, in which case it will be assumed that only one failure mode was observed</p>
+</td></tr>
+<tr valign="top"><td><code>truncation.type.column</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>truncation.response.column</code></td>
+<td>
+<p>The time at which an obsevation is trucated.</p>
+</td></tr>
+<tr valign="top"><td><code>time.units</code></td>
+<td>
+<p>A character string denoting the unit of measure used to quantify system lifetime.
+<code>time.units</code> should be provided for each <code>life.data</code> object as this string will be automatically substituted in many SMRD plots.</p>
+</td></tr>
+<tr valign="top"><td><code>x.columns</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>xlabel</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>data.note</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>func.call</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>residual.rmd</code></td>
+<td>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>William Q. Meeker, PhD
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>frame.to.rmd</code>, <code>frame.to.ddd</code>, <code>surv.to.ld</code>, <code>SMRDOptionsDefaults</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+vignette('echapter1')
+vignette('echapter3')
+vignette('echapter6')
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
