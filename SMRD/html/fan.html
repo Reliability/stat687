@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diesel generator fan failures</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fan {SMRD}"><tr><td>fan {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Diesel generator fan failures</h2>
+
+<h3>Description</h3>
+
+<p>These data are diesel generator fan failures.  Failures in 12 of 70 generator fans were reported at times ranging between 450 hours and 8,750 hours. Of the 58 units that did not fail, the reported running times (i.e., censoring times) ranged between 460 and 11,500 hours. Different fans had different running times because units were introduced into service at different times and because their use-rates differed.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 37 rows and 3 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> hours </td><td style="text-align: left;"> Accumulated time at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>hours</code> (failure/right-censored) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>hours</code> </td><td style="text-align: left;"> <b>Numeric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>Nelson, W. (1982), Applied Life Data Analysis, pg 133, New York, John Wiley &amp; Sons Inc.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
