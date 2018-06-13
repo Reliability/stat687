@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Large system bearing cage test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bearingcage {SMRD}"><tr><td>bearingcage {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Large system bearing cage test</h2>
+
+<h3>Description</h3>
+
+<p>Ball bearing assembly failure data
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 25 rows and 3 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> hours </td><td style="text-align: left;"> Accumulated time at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>hours</code> (failure/right-censored/left-censored/interval-censored)  </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>hours</code> </td><td style="text-align: left;"> <b>Numeric</b>
+   </td>
+</tr>
+
+</table>
+
+
+<h3>Details</h3>
+
+<p>The service life requirement for a ball bearing assembly was specified 
+such that <i>t[0.1]</i> (aka the B10 life) be greater that 8000 hours. 
+Analysts were concerned that the design of the bearing cage in this assembly 
+was inadequate and could lead to premature failures during service.
+Service times were collected for 1703 assemblies that were introduced into 
+service over time.  The analysts wanted to use the service life data to 
+determine if a redesign was needed to ensure that the units could meet the 
+service life requirement.  Management was also interested in determining the 
+number of additional failures that could be expected over the next year
+for the population of assemblies already in service.
+</p>
+
+
+<h3>Note</h3>
+
+<p>Bearing cages are used in ball bearing assemblies to ensure that the 
+ball bearings do not drift out of position relative to the other ball 
+bearings during use.
+</p>
+
+
+<h3>Source</h3>
+
+<p>R. B. Abernethy, J. E. Breneman, C. H. Medlin, and G. L. Reinman, (1983) Weibull Analysis Handbook, Air Force Wright Aeronautical Laboratories Technical Report AFWAL-TR-83-2079
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
