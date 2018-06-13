@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fatigue life test (alloy T7987)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for at7987 {SMRD}"><tr><td>at7987 {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fatigue life test (alloy T7987)</h2>
+
+<h3>Description</h3>
+
+<p>A test was conducted to assess the fatigue life of an alloy, designated as T-7987.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 68 rows and 3 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> kilocycles </td><td style="text-align: left;"> Accumulated cycles at <code>event</code> (in thousands) </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>kilocycles</code> (failed/right-censored) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;"> 
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>kilocycles</code> </td><td style="text-align: left;"> <b>Numeric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Details</h3>
+
+<p>In this test, 72 specimen were subjected to an unreported
+load spectrum. The number of cycles at which a specimen failed was 
+recorded (rounded to the nearest thousand) up to 300 kilocycles.  
+Of the 72 units tested, 67 failures were observed and 5 units 
+were right censored at 300 kilocycles.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Meeker W.Q. and Escobar L.A. (1998) Statistical Methods for Reliability Data, New York: John Wiley &amp; Sons.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
