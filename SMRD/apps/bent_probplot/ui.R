@@ -1,10 +1,5 @@
-library(teachingApps)
-library(SMRD)
-
-ui = fluidPage(theme = shinythemes::shinytheme(theme = getShinyOption("theme")), 
-               tags$head(includeCSS(getShinyOption("CSS"))),
-               tags$head(includeCSS("www/custom.css")),
-               tags$footer(getShinyOption("sign")),
+ui = fluidPage(theme = teachingApps::add_theme(getShinyOption("theme")), 
+               teachingApps::add_css(),
   
 sidebarLayout(
   sidebarPanel(width = 5,
@@ -29,8 +24,8 @@ frame.to.ld(bleed,
 plot(Bleed.ld,
      distribution = NULL)"),
 
-        actionButton("evalbleedplot", h4("Evaluate"), width = '100%')),
+        actionButton("evalbleedplot", "Evaluate")),
         
-        mainPanel(plotOutput("bleedplot", height = "600px"), width = 7)))
+        mainPanel(plotOutput("bleedplot"), width = 7)))
 
 
