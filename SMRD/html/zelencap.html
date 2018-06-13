@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Glass capacitor accelerated life test data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for zelencap {SMRD}"><tr><td>zelencap {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Glass capacitor accelerated life test data</h2>
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 40 rows and 5 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> hours </td><td style="text-align: left;"> Accumulated time at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>hours</code> (failure/right-censored) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>hours</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 4] </td><td style="text-align: left;"> celsius </td><td style="text-align: left;"> Temperature applied  </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 5] </td><td style="text-align: left;"> volts </td><td style="text-align: left;"> Electrical power applied </td><td style="text-align: left;"> <b>Categoric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Details</h3>
+
+<p>Eight capacitors were tested at each combination of temperature and voltage. For each combination the test was terminated after the fourth failure, yielding failure (Type II) censored data.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Zelen (1959)
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
