@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Accelerated test of spacecraft battery cell data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nicdbattery {SMRD}"><tr><td>nicdbattery {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Accelerated test of spacecraft battery cell data</h2>
+
+<h3>Description</h3>
+
+<p>charge-discharge cycles data	truncated	because	of	burn-in	and	removal	of	an	unknown	number of	DOAs
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 87 rows and 10 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> celsius </td><td style="text-align: left;"> Temperature applied to the battery </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> discharge_depth </td><td style="text-align: left;"> Depth of discharge (as percent) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> discharge_time </td><td style="text-align: left;"> Discharge time (in hours) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 4] </td><td style="text-align: left;"> charge </td><td style="text-align: left;"> Charge time (in hours) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 5] </td><td style="text-align: left;"> recharge </td><td style="text-align: left;"> Level of recharge </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 6] </td><td style="text-align: left;"> koh_percent </td><td style="text-align: left;"> Concentration of Potassium Hydroxide (as percent) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 7] </td><td style="text-align: left;"> koh_volume </td><td style="text-align: left;"> Volume of Potassium Hydroxide (in cubic-centimeters) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 8] </td><td style="text-align: left;"> precharge </td><td style="text-align: left;"> Precharge time (in hours) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 9] </td><td style="text-align: left;"> cycles </td><td style="text-align: left;"> Accumulated cycles at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [,10] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>cycles</code> (failure/right-censored)  </td><td style="text-align: left;"> <b>Categoric</b>
+   </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>Brown and Mains (1979)
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
