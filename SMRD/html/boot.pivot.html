@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bootstrap based prediction intervals</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for boot.pivot {SMRD}"><tr><td>boot.pivot {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bootstrap based prediction intervals</h2>
+
+<h3>Description</h3>
+
+<p>Bootstrap based prediction intervals
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+boot.pivot(B = 100, N = 20, mu = 5.13, sigma = 0.161, t_c = NULL,
+  fails = NULL, alpha = 0.05)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>B</code></td>
+<td>
+<p>The number of bootstrap cycles</p>
+</td></tr>
+<tr valign="top"><td><code>N</code></td>
+<td>
+<p>The size of the original data sample</p>
+</td></tr>
+<tr valign="top"><td><code>mu</code></td>
+<td>
+<p>ML estimate for the mean of the original data sample</p>
+</td></tr>
+<tr valign="top"><td><code>sigma</code></td>
+<td>
+<p>ML estimate for the standard deviation of the original data sample</p>
+</td></tr>
+<tr valign="top"><td><code>t_c</code></td>
+<td>
+<p>Censoring time for Type-I censored tests</p>
+</td></tr>
+<tr valign="top"><td><code>fails</code></td>
+<td>
+<p>Number of failures for Type-II censored tests</p>
+</td></tr>
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>Desired significance level</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
