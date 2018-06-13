@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot failures and censored observations as a function of the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for censored.data.plot {SMRD}"><tr><td>censored.data.plot {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot failures and censored observations as a function of the response</h2>
+
+<h3>Description</h3>
+
+<p>Plot failures and censored observations as a function of the response
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+censored.data.plot(data.ld, explan.var = 1, ylim = c(NA, NA), xlim = c(NA,
+  NA), x.axis = "linear", y.axis = "linear", my.title = NULL,
+  ylab = get.time.units(data.ld), xlab = NULL, cex = par()$cex,
+  cex.labs = par()$cex.lab, cex.points = 1.2, add = F, grids = F,
+  title.option = GetSMRDDefault("SMRD.TitleOption"), response.on.yaxis = T)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data.ld</code></td>
+<td>
+<p>Name (as a character string) of a <code>life.data</code> object created using the function <code>frame.to.ld</code></p>
+</td></tr>
+<tr valign="top"><td><code>explan.var</code></td>
+<td>
+<p>numeric(<code>1</code>)
+</p>
+<p>Explanatory variable to be plotted versus the responses.  Value cannot be greater that the number <code>x.columns</code> defined in <code>data.ld</code>.
+Setting <code>explan.var = 1</code> selects the <code>x.column</code> with the lowest number, regardless of the order in which the <code>x.columns</code> were defined in <code>frame.to.ld</code>.  For example, <code>data.ld</code> can have argument <code>x.columns = c(4,5,6)</code> or <code>x.columns = c(6,5,4)</code>.  For either case, <code>explan.var = 1</code> selects <code>x.column = 4</code> since this is the smallest value.
+Note, <code>explan.var</code> may also be defined using a character string matching the name of column</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>numeric(<code>c(NA, NA)</code>)
+</p>
+<p><b>(optional)</b> Range of plotting values for the y-axis.  If left blank, values will be chosen based on the information in <code>data.ld</code></p>
+</td></tr>
+<tr valign="top"><td><code>xlim</code></td>
+<td>
+<p>numeric(<code>c(NA, NA)</code>)
+</p>
+<p><b>(optional)</b> Range of plotting values for the x-axis.  If left blank, values will be chosen based on the information in <code>data.ld</code></p>
+</td></tr>
+<tr valign="top"><td><code>x.axis</code></td>
+<td>
+<p>character(<code>"linear"</code>) 
+</p>
+<p>Transformation applied to the values defined along the x-axis.  See <code>SMRD:::.generic.relationship.name</code> for the list of transformation relationships that can be used</p>
+</td></tr>
+<tr valign="top"><td><code>y.axis</code></td>
+<td>
+<p>character(<code>"linear"</code>) 
+</p>
+<p>Transformation applied to the values defined along the x-axis.  See <code>SMRD:::.generic.relationship.name</code> for the list of transformation relationships that can be used.</p>
+</td></tr>
+<tr valign="top"><td><code>my.title</code></td>
+<td>
+<p>character(<code>NULL</code>)
+</p>
+<p>Title to be displayed above the plot</p>
+</td></tr>
+<tr valign="top"><td><code>ylab</code></td>
+<td>
+<p>character(<code>get.time.units(data.ld)</code>)
+</p>
+<p><b>(optional)</b> Title of the y-axis. If left blank, the value of the <code>time.units</code> argument defined in <code>data.ld</code> will be used.  If no <code>time.units</code> were defined when <code>data.ld</code> was created, <code>'Hours'</code> is used as the default</p>
+</td></tr>
+<tr valign="top"><td><code>xlab</code></td>
+<td>
+<p>character(<code>NULL</code>)
+</p>
+<p><b>(optional)</b> Title of the x-axis.  If left blank, the column name in <code>data.ld</code> corresponding the argument <code>explan.var</code> is used.</p>
+</td></tr>
+<tr valign="top"><td><code>cex</code></td>
+<td>
+<p>numeric(<code>par()$cex</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>cex.labs</code></td>
+<td>
+<p>numeric(<code>par()$cex.lab</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>cex.points</code></td>
+<td>
+<p>numeric(<code>1.2</code>)
+</p>
+<p>Scaling value for size of the points to be plotted</p>
+</td></tr>
+<tr valign="top"><td><code>add</code></td>
+<td>
+<p>logical(<code>FALSE</code>) 
+</p>
+<p>If <code>TRUE</code> plotting is suppressed to allow for the addition of more graphical features</p>
+</td></tr>
+<tr valign="top"><td><code>grids</code></td>
+<td>
+<p>logical(<code>FALSE</code>)
+</p>
+<p>If <code>TRUE</code>, gridlines are provided on the plot</p>
+</td></tr>
+<tr valign="top"><td><code>title.option</code></td>
+<td>
+<p>character(<code>GetSMRDDefault("SMRD.TitleOption")</code>)
+</p>
+<p><b>(optional)</b> Produces a title above the plot using the SMRD default title format</p>
+</td></tr>
+<tr valign="top"><td><code>response.on.yaxis</code></td>
+<td>
+<p>character(<code>TRUE</code>)
+</p>
+<p>If <code>FALSE</code>, the x and y axes are reversed such that the response values are plotted along the x-axis</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>William Q. Meeker, PhD
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="frame.to.ld.html">frame.to.ld</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# Create a \code{life.data} object
+superalloy.ld &lt;- frame.to.ld(superalloy,
+                             response.column = 1, 
+                             censor.column = 2,
+                             x.columns = c(5,6,4),
+                             time.units = "Kilocycles")
+
+summary(superalloy.ld)
+
+censored.data.plot(superalloy.ld, 
+                  explan.var = 3)
+
+censored.data.plot(superalloy.ld, 
+                  explan.var = 3 ,
+                  response.on.yaxis = F)
+
+censored.data.plot(superalloy.ld, 
+                  explan.var = 3, 
+                  x.axis = "log", 
+                  y.axis = "log")
+
+censored.data.plot(superalloy.ld, 
+                  explan.var = 3 ,
+                  response.on.yaxis = F, 
+                  x.axis = "log", 
+                  y.axis = "log")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
