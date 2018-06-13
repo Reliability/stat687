@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: SMRD Analysis Shiny Gadget</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for gadget_ld {SMRD}"><tr><td>gadget_ld {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>SMRD Analysis Shiny Gadget</h2>
+
+<h3>Description</h3>
+
+<p>Shiny gadget used to visually inspect column values in a data set 
+and subset rows by specifying column values
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+gadget_ld(data, theme = "flatly", width = "100%", height = "600px",
+  css = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A data set</p>
+</td></tr>
+<tr valign="top"><td><code>theme</code></td>
+<td>
+<p><code>character</code> A bootswatch theme provided to <code>shinythemes::shinytheme</code></p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p><code>character</code> Width of the gadget (in valid css units)</p>
+</td></tr>
+<tr valign="top"><td><code>height</code></td>
+<td>
+<p><code>character</code> Height of the gadget (in valid css units)</p>
+</td></tr>
+<tr valign="top"><td><code>css</code></td>
+<td>
+<p><code>character</code> Path to a custom css file</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <code>list</code> of length 4
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>A <code>life.data</code> object</p>
+</td></tr>
+<tr valign="top"><td><code>dist</code></td>
+<td>
+<p>The selected distribution</p>
+</td></tr>
+<tr valign="top"><td><code>cdfest</code></td>
+<td>
+<p>A cdfest object</p>
+</td></tr>
+<tr valign="top"><td><code>mlest</code></td>
+<td>
+<p>A mlest object</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: gadget_ld(data = shockabsorber)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
