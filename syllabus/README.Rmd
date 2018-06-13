@@ -188,7 +188,7 @@ chap <- function(x) {
   sapply(X = x,
          FUN = function(y) {
   Chap <- paste0('**',SMRD:::info(paste0('chapter',y)),'**' ) 
-  Link <- paste0('https://afit.shinyapps.io/smrd-chapter-',y)
+  Link <- paste0('https://rpubs.com/smrd/chapter',y)
           paste0('[',Chap,'](',Link,')')
          }) -> Both 
   
@@ -228,15 +228,15 @@ knitr::kable(sched, format = 'pandoc', row.names = F)
 
 In addition to the course schedule, you should take note of the following dates.
 
-- 03 Jul - AETC Family Day (No Classes)
 - 04 Jul - Indenpendence Day (No Classes)
-- 07 Jul - Last Day to Drop Without Record
-- 18 Aug - Last Day to Withdraw Without a Grade
-- 31 Aug - Summer Quarter Classes End
-- 01 Sep - AETC Family Day (No Classes)
-- 04 Sep - Labor Day (No Classes)
-- 05 Sep - Final Exam Week Begins
-- 08 Sep - Final Exam Week Ends
+- 05 Jul - AETC Family Day (No Classes)
+- 06 Jul - Last Day to Drop Without Record
+- 17 Aug - Last Day to Withdraw Without a Grade
+- 30 Aug - Summer Quarter Classes End
+- 31 Aug - AETC Family Day (No Classes)
+- 03 Sep - Labor Day (No Classes)
+- 04 Sep - Final Exam Week Begins
+- 07 Sep - Final Exam Week Ends
 
 ## Important Policy Statements
 
