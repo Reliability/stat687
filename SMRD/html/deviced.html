@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: #####</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for devicedconnected {SMRD}"><tr><td>devicedconnected {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>#####</h2>
+
+<h3>Description</h3>
+
+<p>Berkson investigated the randomness of alpha-particle emissions of americium-241 (which has a half-life of about 458 years). Physical theory suggests that, over a short period of time, the interarrival times of observed particles would be independent and come from an exponential distribution where the rate parameter is the mean time between arrivals. The corresponding homogeneous Poisson process that counts the number of emissions on the real-time line has arrival rate or the intensity lambda=1/theta. The data consist of 10,220 observed interarrival times of alpha particles (time unit equal to 1/5,000 second). The observed interarrival times were put into intervals (or bins) running from 0 to 4,000 time units with interval lengths ranging from 25 to 100 time units, with one additional interval for observed times exceeding 4,000 time units.  To save space, this example uses a smaller number of larger bins; reducing the number of bins in this way will not seriously affect the precision of ML estimates.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 986 rows and 9 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> weeks </td><td style="text-align: left;"> Failure time </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> cycles </td><td style="text-align: left;"> Total accumulated cycles at failure </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> causeoffailure.fm1 </td><td style="text-align: left;"> Type of event observed (failure, right-censored, left-censored, or interval-censored)  </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 4] </td><td style="text-align: left;"> causeoffailure.fm2 </td><td style="text-align: left;"> Start time (in hours) of an inspection interval </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 5] </td><td style="text-align: left;"> causeoffailure.fm3 </td><td style="text-align: left;"> Time (in hours) at which an interval ends </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 6] </td><td style="text-align: left;"> causeoffailure.fmother </td><td style="text-align: left;"> Type of event observed (failure, right-censored, left-censored, or interval-censored)  </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 7] </td><td style="text-align: left;"> perweek </td><td style="text-align: left;"> Average number of cycles (across all users) </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 8] </td><td style="text-align: left;"> weeksinserted </td><td style="text-align: left;"> Time inserted into service </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 9] </td><td style="text-align: left;"> weeksreturned </td><td style="text-align: left;"> Time return to manufacturer </td><td style="text-align: left;"> <b>Numeric</b>
+   </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>Berkson, J. (1966), Examination of randomness of alpha-particle emissions, in Festschrift for J. Neyman, Research Papers in Statistics, F. N. David, Editor, New York: John Wiley &amp; Sons
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
