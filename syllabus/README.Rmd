@@ -197,9 +197,9 @@ chap <- function(x) {
 
 weeks <- list( 
   
-week1  = c('Introduction to R [**1**](https://afit-r.github.io/intro), [**2**](https://afit-r.github.io/basics)',
-           'Introduction to Literate Programming with `rmarkdown` [**1**](https://afit-r.github.io/r_markdown)',
-           'Introduction to Github [**1**](https://afit-r.github.io/r_projects), [**2**](https://afit-r.github.io/r_git)', 
+week1  = c('Introduction to R [**[1]**](https://afit-r.github.io/intro), [**[2]**](https://afit-r.github.io/basics)',
+           'Introduction to Literate Programming with `rmarkdown` [**[1]**](https://afit-r.github.io/r_markdown)',
+           'Introduction to Github [**[1]**](https://afit-r.github.io/r_projects), [**[2]**](https://afit-r.github.io/r_git)', 
            chap(1)),
 week2  = chap(c(2,3)),
 week3  = chap(c(4,5)),
