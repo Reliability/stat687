@@ -4,7 +4,7 @@ author: '<h3>Course Syllabus - Summer 2018</h3>'
 date: '<h3>MTWF 0900-1000 Bldg. 641 Rm. 228 (4.0 Credit Hours)</h3>'
 output: 
   github_document:
-    html_preview: yes
+    html_preview: no
     toc: true
     toc_depth: 2
 ---
@@ -197,9 +197,9 @@ chap <- function(x) {
 
 weeks <- list( 
   
-week1  = c('Introduction to R',
-           'Introduction to Literate Programming with `rmarkdown`',
-           'Introduction to Github', 
+week1  = c('Introduction to R [1](https://afit-r.github.io/intro), [2](https://afit-r.github.io/basics)',
+           'Introduction to Literate Programming with `rmarkdown` [1](https://afit-r.github.io/r_markdown)',
+           'Introduction to Github [1](https://afit-r.github.io/r_projects), [2](https://afit-r.github.io/r_git)', 
            chap(1)),
 week2  = chap(c(2,3)),
 week3  = chap(c(4,5)),
