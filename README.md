@@ -319,9 +319,9 @@ instructor.
 
 | Week | Topics.Presented                                                                                                      |
 | :--- | :-------------------------------------------------------------------------------------------------------------------- |
-| 1    | Introduction to R [**1**](https://afit-r.github.io/intro), [**2**](https://afit-r.github.io/basics)                   |
-|      | Introduction to Literate Programming with `rmarkdown` [**1**](https://afit-r.github.io/r_markdown)                    |
-|      | Introduction to Github [**1**](https://afit-r.github.io/r_projects), [**2**](https://afit-r.github.io/r_git)          |
+| 1    | Introduction to R [**\[1\]**](https://afit-r.github.io/intro), [**\[2\]**](https://afit-r.github.io/basics)           |
+|      | Introduction to Literate Programming with `rmarkdown` [**\[1\]**](https://afit-r.github.io/r_markdown)                |
+|      | Introduction to Github [**\[1\]**](https://afit-r.github.io/r_projects), [**\[2\]**](https://afit-r.github.io/r_git)  |
 |      | [**Chapter 1 - Reliability Concepts and Reliability Data**](https://rpubs.com/smrd/chapter1)                          |
 | 2    | [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://rpubs.com/smrd/chapter2)            |
 |      | [**Chapter 3 - Nonparametric Estimation**](https://rpubs.com/smrd/chapter3)                                           |
