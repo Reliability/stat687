@@ -189,35 +189,34 @@ Course Schedule
 
 The course schedule below is **TENTATIVE** and is therefore subject to change. Any changes made to this schedule will be clearly communicated by the instructor.
 
-| Week          | Topics.Presented                                                                                                                             |
-|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| 1             | Introduction to R [**\[1\]**](https://datasciencelabs.io/r-basics/install.html), [**\[2\]**](https://datasciencelabs.io/r-basics/intro.html) |
-|               | Managing your R workflow [**\[1\]**](https://datasciencelabs.io/r-basics/r-projects.html),                                                   |
-| \[\*\*\[2\]\* | \*\](<https://datasciencelabs.io/r-basics/rmarkdown.html>)                                                                                   |
-|               | [**Chapter 1 - Reliability Concepts and Reliability Data**](https://rpubs.com/smrd/chapter1)                                                 |
-| 2             | [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://rpubs.com/smrd/chapter2)                                   |
-|               | [**Chapter 3 - Nonparametric Estimation**](https://rpubs.com/smrd/chapter3)                                                                  |
-| 3             | [**Chapter 4 - Location-Scale-Based Parametric Distributions**](https://rpubs.com/smrd/chapter4)                                             |
-|               | [**Chapter 5 - Other Parametric Distributions**](https://rpubs.com/smrd/chapter5)                                                            |
-| 4             | Project Review 1                                                                                                                             |
-|               | [**Chapter 6 - Probability Plotting**](https://rpubs.com/smrd/chapter6)                                                                      |
-| 5             | [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://rpubs.com/smrd/chapter7)                          |
-|               | [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://rpubs.com/smrd/chapter8)                                   |
-|               | [**Chapter 11 - Parametric Maximum Likelihood: Other Models**](https://rpubs.com/smrd/chapter11)                                             |
-| 6             | [**Chapter 9 - Bootstrap Confidence Intervals**](https://rpubs.com/smrd/chapter9)                                                            |
-|               | [**Chapter 10 - Planning Life Tests**](https://rpubs.com/smrd/chapter10)                                                                     |
-| 7             | [**Chapter 12 - Prediction of Future Random Quantities**](https://rpubs.com/smrd/chapter12)                                                  |
-|               | [**Chapter 14 - Introduction to the Use of Bayesian Methods for Reliability Data**](https://rpubs.com/smrd/chapter14)                        |
-| 8             | Project Review 2                                                                                                                             |
-|               | Introduction to Shiny                                                                                                                        |
-|               | [**Chapter 15 - System Reliability Concepts and Methods**](https://rpubs.com/smrd/chapter15)                                                 |
-| 9             | [**Chapter 17 - Failure-Time Regression Analysis**](https://rpubs.com/smrd/chapter17)                                                        |
-|               | [**Chapter 18 - Accelerated Test Models**](https://rpubs.com/smrd/chapter18)                                                                 |
-| 10            | [**Chapter 19 - Accelerated Life Tests**](https://rpubs.com/smrd/chapter19)                                                                  |
-|               | [**Chapter 20 - Planning Accelerated Life Tests**](https://rpubs.com/smrd/chapter20)                                                         |
-|               | Course Review                                                                                                                                |
-| 11            | Project Out-Briefs                                                                                                                           |
-|               | Final Exams Due                                                                                                                              |
+| Week | Topics.Presented                                                                                                                                           |
+|:-----|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Introduction to R [**\[1\]**](https://datasciencelabs.io/r-basics/install.html), [**\[2\]**](https://datasciencelabs.io/r-basics/intro.html)               |
+|      | Managing your R Workflow [**\[1\]**](https://datasciencelabs.io/r-basics/r-projects.html), [**\[2\]**](https://datasciencelabs.io/r-basics/rmarkdown.html) |
+|      | [**Chapter 1 - Reliability Concepts and Reliability Data**](https://rpubs.com/smrd/chapter1)                                                               |
+| 2    | [**Chapter 2 - Models, Censoring, and Likelihood for Failure-Time Data**](https://rpubs.com/smrd/chapter2)                                                 |
+|      | [**Chapter 3 - Nonparametric Estimation**](https://rpubs.com/smrd/chapter3)                                                                                |
+| 3    | [**Chapter 4 - Location-Scale-Based Parametric Distributions**](https://rpubs.com/smrd/chapter4)                                                           |
+|      | [**Chapter 5 - Other Parametric Distributions**](https://rpubs.com/smrd/chapter5)                                                                          |
+| 4    | Project Review 1                                                                                                                                           |
+|      | [**Chapter 6 - Probability Plotting**](https://rpubs.com/smrd/chapter6)                                                                                    |
+| 5    | [**Chapter 7 - Parametric Likelihood Fitting Concepts: Exponential Distribution**](https://rpubs.com/smrd/chapter7)                                        |
+|      | [**Chapter 8 - Maximum Likelihood for Log-Location-Scale Distributions**](https://rpubs.com/smrd/chapter8)                                                 |
+|      | [**Chapter 11 - Parametric Maximum Likelihood: Other Models**](https://rpubs.com/smrd/chapter11)                                                           |
+| 6    | [**Chapter 9 - Bootstrap Confidence Intervals**](https://rpubs.com/smrd/chapter9)                                                                          |
+|      | [**Chapter 10 - Planning Life Tests**](https://rpubs.com/smrd/chapter10)                                                                                   |
+| 7    | [**Chapter 12 - Prediction of Future Random Quantities**](https://rpubs.com/smrd/chapter12)                                                                |
+|      | [**Chapter 14 - Introduction to the Use of Bayesian Methods for Reliability Data**](https://rpubs.com/smrd/chapter14)                                      |
+| 8    | Project Review 2                                                                                                                                           |
+|      | Introduction to Shiny                                                                                                                                      |
+|      | [**Chapter 15 - System Reliability Concepts and Methods**](https://rpubs.com/smrd/chapter15)                                                               |
+| 9    | [**Chapter 17 - Failure-Time Regression Analysis**](https://rpubs.com/smrd/chapter17)                                                                      |
+|      | [**Chapter 18 - Accelerated Test Models**](https://rpubs.com/smrd/chapter18)                                                                               |
+| 10   | [**Chapter 19 - Accelerated Life Tests**](https://rpubs.com/smrd/chapter19)                                                                                |
+|      | [**Chapter 20 - Planning Accelerated Life Tests**](https://rpubs.com/smrd/chapter20)                                                                       |
+|      | Course Review                                                                                                                                              |
+| 11   | Project Out-Briefs                                                                                                                                         |
+|      | Final Exams Due                                                                                                                                            |
 
 ### Other Noteworthy Dates
 
