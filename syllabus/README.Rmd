@@ -198,8 +198,7 @@ chap <- function(x) {
 weeks <- list( 
   
 week1  = c('Introduction to R [**[1]**](https://datasciencelabs.io/r-basics/install.html), [**[2]**](https://datasciencelabs.io/r-basics/intro.html)',
-           'Managing your R workflow [**[1]**](https://datasciencelabs.io/r-basics/r-projects.html),
-[**[2]**](https://datasciencelabs.io/r-basics/rmarkdown.html)', 
+           'Managing your R Workflow [**[1]**](https://datasciencelabs.io/r-basics/r-projects.html), [**[2]**](https://datasciencelabs.io/r-basics/rmarkdown.html)', 
            chap(1)),
 week2  = chap(c(2,3)),
 week3  = chap(c(4,5)),
