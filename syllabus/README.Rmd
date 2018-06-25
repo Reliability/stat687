@@ -167,14 +167,14 @@ The final project has the following milestones:
 
 A key component of this course involves developing the skills and knowledge to create **reproducible & dynamic** data products to present results from your research. In previous offerings of this course, I allowed students to use any software package to complete their assignments.  This became difficult, for the students to complete their work and for me to grade them.  So, I've decided to require you to use the R programming language to complete and submit your assignments. 
 
-I realize that some of you may be new to coding or may have never coded before. Don't worry, you don't need an extensive background in R or \LaTeX to be successful in this course. Each week I'll provide you with LOTS of code examples that you can copy/paste to help you get more familiar with the software.  Also, many  created several demo presentations to get you up to speed and I'm always willing to help out when needed.  The [**first demo presentation**](https://afit.shinyapps.io/r-intro-installation) walks you through the process of getting the R/RStudio tool-chain installed and ready for the course. 
+I realize that some of you may be new to coding or may have never coded before. Don't worry, you don't need an extensive background in R or \LaTeX to be successful in this course. Each week I'll provide you with LOTS of code examples that you can copy/paste to help you get more familiar with the software.  Also, many  created several demo presentations to get you up to speed and I'm always willing to help out when needed.  The first link provided for Week 1 in the schedule below walks you through the process of getting the R/RStudio tool-chain installed and ready for the course. 
 
 Each of these tools listed below will be used this quarter:
 
 + R Project for Statistical Computing
 + RStudio IDE
 + Git/Github
-+ Mathjax
++ LaTeX/Mathjax
 + Pandoc Markdown
 + HTML~5~, CSS3, and JavaScript (don't need to know these - already built in!)
 
