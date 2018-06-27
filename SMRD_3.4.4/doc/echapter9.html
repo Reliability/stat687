@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="W. Q. Meeker, L. A. Escobar, and J. K. Freels" />
+
+<meta name="date" content="2018-04-11" />
+
+<title>Statistical Methods for Reliability Data</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20940px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2020px%3B%0Aline%2Dheight%3A%201%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%201%2E5em%200%3B%0Afont%2Dsize%3A%20110%25%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20square%3B%0Aline%2Dheight%3A%201%2E5em%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0Alist%2Dstyle%3A%20disc%3B%0Aline%2Dheight%3A%201%2E25em%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Acolor%3A%20red%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%2Dwidth%3A%201%2E75px%3B%0Aborder%2Dcolor%3A%20%2300428C%3B%0Abackground%2Dcolor%3A%20%23FFF%20%3B%0Amargin%3A%2030px%200%2030px%200%3B%0Aborder%2Dradius%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20code%20%7B%0Abackground%2Dcolor%3A%20%23FFF%3B%0Acolor%3A%20%2300428C%3B%0A%7D%0Acode%20%7B%0Aline%2Dheight%3A%20135%25%3B%0Afont%2Dsize%3A%20100%25%3B%0Afont%2Dfamily%3A%20%27Source%20Code%20Pro%27%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dweight%3A%20normal%3B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%0Apadding%3A%203px%206px%203px%206px%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%203px%206px%203px%206px%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%20160%25%3B%0Aline%2Dheight%3A%20110%25%3B%0Aborder%3A%20solid%3B%0Aborder%2Dcolor%3A%2300428C%3B%0Aborder%2Dwidth%3A%200%200%202px%200%3B%0Apadding%3A%200%200%2010px%200%3B%0A%7D%0A%2Etitle%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%20160%25%3B%0Aline%2Dheight%3A%20110%25%3B%0Aborder%3A%20none%3B%0Apadding%3A%200%200%200%200%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20140%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Edt%20%7B%20color%3A%20%23902000%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Edv%20%7B%20color%3A%20%2340a070%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Ebn%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Efl%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Ech%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Est%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%20code%20%3E%20%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20padding%3A%201px%3B%7D%20%0Ared%20%7B%20color%3A%20red%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Ablue%20%7B%20color%3A%20blue%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Agreen%20%7B%20color%3A%20green%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Apurple%20%7B%20color%3A%20purple%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Aorange%20%7B%20color%3A%20orange%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Abrown%20%7B%20color%3A%20brown%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Afocus%20%7B%20background%2Dcolor%3A%20%23F39C12%3B%20border%2Dcolor%3A%20orange%3B%0Aborder%2Dradius%3A%2010px%3B%0Apadding%3A%204%2E5px%208px%206%2E5px%208px%3B%0Awhite%2Dspace%3A%20nowrap%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Apadding%3A%2015px%200%2015px%2030px%3B%0A%7D%0Aspan%20%7B%0Apadding%3A%200%200%200%200%3B%0A%7D%0Acode%2EsourceCode%7B%0Acolor%3A%20black%3B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2090%25%3B%0Apadding%3A%200%200%200%200%3B%0A%7D%0A%2Ecolumns%2D2%20%7B%0A%2Dms%2Dcolumn%2Dcount%3A%203%3B%0A%2Dwebkit%2Dcolumn%2Dcount%3A%203%3B%20%0A%2Dmoz%2Dcolumn%2Dcount%3A%203%3B%20%0Acolumn%2Dcount%3A%203%3B%0A%7D" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Statistical Methods for Reliability Data</h1>
+<h3 class="subtitle"><em>Chapter 9 - Bootstrap Confidence Intervals</em></h3>
+<h4 class="author"><em>W. Q. Meeker, L. A. Escobar, and J. K. Freels</em></h4>
+<h4 class="date"><em>2018-04-11</em></h4>
+
+
+
+<div id="in-this-vignette" class="section level1">
+<h1>In This Vignette…</h1>
+</div>
+<div id="note-that-especially-the-nonparametric-boot-output-structures-can-be-quite-large." class="section level1">
+<h1>note that especially the nonparametric boot output structures can be quite large.</h1>
+</div>
+<div id="section" class="section level1">
+<h1></h1>
+</div>
+<div id="the-following-is-a-test-example-that-uses-only-a-small-number-of-simulations" class="section level1">
+<h1>the following is a test example that uses only a small number of simulations</h1>
+</div>
+<div id="in-order-to-test-the-routines.-the-compute-time-and-memory-requiremetns-are" class="section level1">
+<h1>in order to test the routines. The compute time and memory requiremetns are</h1>
+</div>
+<div id="too-large-for-the-routine-tests-that-i-do." class="section level1">
+<h1>too large for the routine tests that I do.</h1>
+</div>
+<div id="section-1" class="section level1">
+<h1></h1>
+</div>
+<div id="section-2" class="section level1">
+<h1></h1>
+</div>
+<div id="shockabsorber-example" class="section level1">
+<h1>ShockAbsorber example</h1>
+</div>
+<div id="parametric-bootstrap" class="section level1">
+<h1>parametric bootstrap</h1>
+<p>ShockAbsorber.boot.p &lt;- parametric.bootstrap(ShockAbsorber.ld,distribution=“Weibull”,number.sim=2000)</p>
+<p>plot(ShockAbsorber.boot.p) plot(ShockAbsorber.boot.p, simulate.parameters = TRUE, parameter.sims = 500)</p>
+<p>summary(ShockAbsorber.boot.p,inference.on = “parameter”, which = 1) summary(ShockAbsorber.boot.p,inference.on = “parameter”, which = 2,do.compare=T) summary(ShockAbsorber.boot.p,inference.on = “parameter”, which = 2) summary(ShockAbsorber.boot.p,inference.on = “quantile”, which =.1) summary(ShockAbsorber.boot.p,inference.on = “probability”, which =1000)</p>
+<p>compare.summary.boot.npar.par.out(ShockAbsorber.boot.p,inference.on = “parameter”, which = 2)</p>
+<p>focus.boot.npar.par.out(ShockAbsorber.boot.p,inference.on = “parameter”, which = 2)</p>
+</div>
+<div id="nonparametric-bootstrap" class="section level1">
+<h1>nonparametric bootstrap</h1>
+<p>ShockAbsorber.boot.np&lt;- nonparametric.bootstrap(ShockAbsorber.ld,number.sim=20)</p>
+<p>plot(ShockAbsorber.boot.np) summary(ShockAbsorber.boot.np, compare = T) compare.summary.boot.npar.npar.out(ShockAbsorber.boot.np)</p>
+<p>if(F){</p>
+</div>
+<div id="shockabsorber-example-1" class="section level1">
+<h1>ShockAbsorber example</h1>
+</div>
+<div id="parametric-bootstrap-1" class="section level1">
+<h1>parametric bootstrap</h1>
+<p>ShockAbsorber.boot.p2 &lt;- parametric.bootstrap(ShockAbsorber.ld,number.sim=2000,distribution=“Weibull”)</p>
+<p>plot(ShockAbsorber.boot.p2) plot(ShockAbsorber.boot.p2, simulate.parameters = TRUE, parameter.sims = 500) summary(ShockAbsorber.boot.p2,inference.on = “parameter”, which = 1) summary(ShockAbsorber.boot.p2,inference.on = “parameter”, which = 2) summary(ShockAbsorber.boot.p2,inference.on = “quantile”, which =.1) summary(ShockAbsorber.boot.p2,inference.on = “probability”, which =1000)</p>
+<p>compare.summary.boot.npar.par.out(ShockAbsorber.boot.p2,inference.on = “parameter”, which = 2)</p>
+</div>
+<div id="nonparametric-bootstrap-1" class="section level1">
+<h1>nonparametric bootstrap</h1>
+<p>ShockAbsorber.boot.np2 &lt;- nonparametric.bootstrap(ShockAbsorber.ld,number.sim=2000)</p>
+<p>plot(ShockAbsorber.boot.np2) summary(ShockAbsorber.boot.np2) compare.summary.boot.npar.npar.out(ShockAbsorber.boot.np2)</p>
+</div>
+<div id="bearing-cage-example" class="section level1">
+<h1>bearing cage example</h1>
+</div>
+<div id="parametric-bootstrap-2" class="section level1">
+<h1>parametric bootstrap</h1>
+<p>BearingCage.boot.p &lt;- parametric.bootstrap(BearingCage.ld,distribution=“Weibull”,number.sim=2000)</p>
+<p>plot(BearingCage.boot.p)</p>
+<p>summary(BearingCage.boot.p,inference.on = “parameter”, which = 1) summary(BearingCage.boot.p,inference.on = “parameter”, which = 2) summary(BearingCage.boot.p,inference.on = “quantile”, which =.1) summary(BearingCage.boot.p,inference.on = “probability”, which =1000)</p>
+</div>
+<div id="nonparametric-bootstrap-2" class="section level1">
+<h1>nonparametric bootstrap</h1>
+<p>BearingCage.boot.np &lt;- nonparametric.bootstrap(BearingCage.ld,number.sim=2000)</p>
+<p>plot(BearingCage.boot.np) summary(BearingCage.boot.np) compare.summary.boot.npar.npar.out(BearingCage.boot.np)</p>
+</div>
+<div id="bulb-example" class="section level1">
+<h1>bulb example</h1>
+<p>summary(bulb.ld)</p>
+<p>bulb.boot.p &lt;- parametric.bootstrap(bulb.ld,distribution=“normal”,number.sim=2000)</p>
+<p>plot(bulb.boot.p)</p>
+<p>summary(bulb.boot.p,inference.on = “parameter”, which = 1) summary(bulb.boot.p,inference.on = “parameter”, which = 2) summary(bulb.boot.p,inference.on = “quantile”, which =.1) summary(bulb.boot.p,inference.on = “probability”, which =1000)</p>
+</div>
+<div id="nonparametric-bootstrap-3" class="section level1">
+<h1>nonparametric bootstrap</h1>
+<p>bulb.boot.np &lt;- nonparametric.bootstrap(bulb.ld,number.sim=2000)</p>
+<p>plot(bulb.boot.np) summary(bulb.boot.np,time.index=200) compare.summary.boot.npar.npar.out(bulb.boot.np,time.index=200)</p>
+<p>}</p>
+</div>
+<div id="single-distribution-simulations" class="section level1">
+<h1>single distribution simulations</h1>
+<p>SingleDistSim(number.sim=10,distribution=“Weibull”,theta = c(mu=0., sigma=1.),sample.size=10, censor.type = “None”)</p>
+<p>SingleDistSim(number.sim=10,distribution=“Weibull”,theta = c(mu=0., sigma=1.),sample.size=10,censor.type = “Type 1”, fail.fraction=.5)</p>
+<p>SingleDistSim(number.sim=10,distribution=“Weibull”,theta = c(mu=0., sigma=1.),sample.size=10, censor.type = “Type 2”, fail.number = 5)</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

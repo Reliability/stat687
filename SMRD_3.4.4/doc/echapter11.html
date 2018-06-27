@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="W. Q. Meeker, L. A. Escobar, and J. K. Freels" />
+
+<meta name="date" content="2018-04-11" />
+
+<title>Statistical Methods for Reliability Data</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20940px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2020px%3B%0Aline%2Dheight%3A%201%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%201%2E5em%200%3B%0Afont%2Dsize%3A%20110%25%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20square%3B%0Aline%2Dheight%3A%201%2E5em%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0Alist%2Dstyle%3A%20disc%3B%0Aline%2Dheight%3A%201%2E25em%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Acolor%3A%20red%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%2Dwidth%3A%201%2E75px%3B%0Aborder%2Dcolor%3A%20%2300428C%3B%0Abackground%2Dcolor%3A%20%23FFF%20%3B%0Amargin%3A%2030px%200%2030px%200%3B%0Aborder%2Dradius%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20code%20%7B%0Abackground%2Dcolor%3A%20%23FFF%3B%0Acolor%3A%20%2300428C%3B%0A%7D%0Acode%20%7B%0Aline%2Dheight%3A%20135%25%3B%0Afont%2Dsize%3A%20100%25%3B%0Afont%2Dfamily%3A%20%27Source%20Code%20Pro%27%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dweight%3A%20normal%3B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%0Apadding%3A%203px%206px%203px%206px%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%203px%206px%203px%206px%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%20160%25%3B%0Aline%2Dheight%3A%20110%25%3B%0Aborder%3A%20solid%3B%0Aborder%2Dcolor%3A%2300428C%3B%0Aborder%2Dwidth%3A%200%200%202px%200%3B%0Apadding%3A%200%200%2010px%200%3B%0A%7D%0A%2Etitle%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%20160%25%3B%0Aline%2Dheight%3A%20110%25%3B%0Aborder%3A%20none%3B%0Apadding%3A%200%200%200%200%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20140%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Edt%20%7B%20color%3A%20%23902000%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Edv%20%7B%20color%3A%20%2340a070%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Ebn%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Efl%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Ech%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Est%20%7B%20color%3A%20%23d14%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%0Acode%20%3E%20%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20padding%3A%201px%3B%7D%20%20code%20%3E%20%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20padding%3A%201px%3B%7D%20%0Ared%20%7B%20color%3A%20red%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Ablue%20%7B%20color%3A%20blue%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Agreen%20%7B%20color%3A%20green%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Apurple%20%7B%20color%3A%20purple%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Aorange%20%7B%20color%3A%20orange%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Abrown%20%7B%20color%3A%20brown%3B%20font%2Dweight%3A%20bold%3B%20%7D%0Afocus%20%7B%20background%2Dcolor%3A%20%23F39C12%3B%20border%2Dcolor%3A%20orange%3B%0Aborder%2Dradius%3A%2010px%3B%0Apadding%3A%204%2E5px%208px%206%2E5px%208px%3B%0Awhite%2Dspace%3A%20nowrap%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Abackground%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dcolor%3A%20%23e6e6e6%3B%0Aborder%2Dradius%3A%2010px%3B%0Apadding%3A%2015px%200%2015px%2030px%3B%0A%7D%0Aspan%20%7B%0Apadding%3A%200%200%200%200%3B%0A%7D%0Acode%2EsourceCode%7B%0Acolor%3A%20black%3B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2090%25%3B%0Apadding%3A%200%200%200%200%3B%0A%7D%0A%2Ecolumns%2D2%20%7B%0A%2Dms%2Dcolumn%2Dcount%3A%203%3B%0A%2Dwebkit%2Dcolumn%2Dcount%3A%203%3B%20%0A%2Dmoz%2Dcolumn%2Dcount%3A%203%3B%20%0Acolumn%2Dcount%3A%203%3B%0A%7D" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Statistical Methods for Reliability Data</h1>
+<h3 class="subtitle"><em>Chapter 11 - Parametric Maximum Likelihood: Other Models</em></h3>
+<h4 class="author"><em>W. Q. Meeker, L. A. Escobar, and J. K. Freels</em></h4>
+<h4 class="date"><em>2018-04-11</em></h4>
+
+
+
+<div id="in-this-vignette" class="section level1">
+<h1>In This Vignette…</h1>
+</div>
+<div id="warning-some-of-the-ml-estimation-attempts-fail-to-converge" class="section level1">
+<h1>Warning: some of the ML estimation attempts fail to converge</h1>
+</div>
+<div id="section" class="section level1">
+<h1></h1>
+</div>
+<div id="section-1" class="section level1">
+<h1></h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LocomotiveControl.ld &lt;-<span class="st"> </span><span class="kw">frame.to.ld</span>(locomotivecontrol,
+                                    <span class="dt">response.column =</span> <span class="dv">1</span>, 
+                                    <span class="dt">censor.column =</span> <span class="dv">2</span>,
+                                    <span class="dt">case.weight.column =</span> <span class="dv">3</span>,
+                                    <span class="dt">time.units =</span> <span class="st">&quot;kMiles&quot;</span>)</code></pre></div>
+<p>LocomotiveControl.gamma.gmle.out &lt;- Gamma.mle(LocomotiveControl.ld)</p>
+<p>gmleprobplot(LocomotiveControl.ld,distribution=“gamma”, xlim=c(10,199),ylim=c(.0011,.991))</p>
+</div>
+<div id="note-that-these-examples-take-longer-to-run" class="section level1">
+<h1>Note that these examples take longer to run</h1>
+<div id="gamma-dist-examples" class="section level2">
+<h2>gamma dist examples</h2>
+<p>bear.gamma.gmle.out &lt;- Gamma.mle(lzbearing.ld)</p>
+<p>summary(bear.gamma.gmle.out)</p>
+<p>gmleprobplot(lzbearing.ld,distribution=“gamma”,xlim=c(10,199),ylim=c(.0011,.991),compare=c(“Lognormal”,“Weibull”))</p>
+<p>legend(x=c(3.6,5.2),y=c(-1.6,-2.7), c(“Gamma”,“Lognormal”,“Weibull”,“95% pointwise confidence intervals”),lty = c(1, 3, 4,2),bty=“n”,cex=1.2)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bkfatigue10.ld &lt;-<span class="st"> </span><span class="kw">frame.to.ld</span>(bkfatigue10, 
+                              <span class="dt">response.column =</span> <span class="dv">1</span>,
+                              <span class="dt">time.units =</span> <span class="st">&quot;Kilocycles&quot;</span>)
+
+<span class="kw">summary</span>(bkfatigue10.ld)</code></pre></div>
+<pre><code>
+Summary of: bkfatigue10
+
+
+
+Number of rows in data matrix= 63 
+Response units:  Kilocycles 
+Response minimum:  13 
+Response maximum:  794.8 
+Number of cases in data set= 63 
+Number of exact observations in data set= 63 
+No truncation information
+No explanatory variables</code></pre>
+<p>bkfatigue10.gamma.gmle.out &lt;- Gamma.mle(bkfatigue10.ld)</p>
+<p>gmleprobplot(bkfatigue10.ld,distribution=“gamma”,compare=c(“Lognormal”))</p>
+<p>gmleprobplot(bkfatigue10.ld,distribution=“Lognormal”,compare=c(“gamma”))</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">at7987.ld &lt;-<span class="st"> </span><span class="kw">frame.to.ld</span>(at7987, 
+                         <span class="dt">response.column =</span> <span class="dv">1</span>,
+                         <span class="dt">censor.column =</span> <span class="dv">2</span>, 
+                         <span class="dt">case.weight.column =</span> <span class="dv">3</span>,
+                         <span class="dt">time.units =</span> <span class="st">&quot;Kilocycles&quot;</span>)</code></pre></div>
+<p>summary(at7987.ld)</p>
+<p>at7987.gamma.gmle.out &lt;- Gamma.mle(at7987.ld)</p>
+<p>gmleprobplot(at7987.ld,distribution=“Gamma”,compare=c(“Lognormal”))</p>
+</div>
+</div>
+<div id="egeng-examples" class="section level1">
+<h1>egeng examples</h1>
+<p>at7987.egeng.gmle.out &lt;- egeng.mle(at7987.ld)</p>
+<p>bear.egeng.gmle.out &lt;- egeng.mle(lzbearing.ld)</p>
+<p>lzbearing5.ld &lt;- small.interval(lzbearing.ld, delta = 1e-03, tlog = T)</p>
+<p>bear5.egeng.gmle.out &lt;- egeng.mle(lzbearing5.ld)</p>
+<p>at7987.egeng.gmle.out &lt;- gmleprobplot(at7987.ld,distribution=“egeng”)</p>
+<p>gmleprobplot(lzbearing.ld,distribution=“egeng”,xlim=c(10,199),ylim=c(.0011,.991),compare=c(“Weibull”,“Lognormal”,“Exponential”)) text(2.4969, -1.31908, “EXP”) text(2.50633, -3.4758, “WEIB”) text(2.34606, -5.75833, “EGENG”) text(2.70432, -6.94453, “LOGNOR”)</p>
+<p>tmp &lt;- one.dim.profile(bear.egeng.gmle.out,profile.on.list = 3,range.list = list(c(-1,2.0)),size = 50,save.structures=F )</p>
+<p>profile.plot(tmp, variable.name=“lambda”) abline(v=0,lty=3) abline(v=1,lty=3) text(0.829561, 0.224463, “WEIB”) text(-0.236364, 0.224463, “LOGNOR”)</p>
+<p>Fan.egeng.gmle.out &lt;- egeng.mle(Fan.ld)</p>
+<p>gmleprobplot(Fan.ld,distribution=“egeng”,xlim=c(200,9999), ylim=c(.0011,.39), compare=c(“Weibull”,“Lognormal”,“Exponential”)) text(5.37368, -2.28317, “EXP”) text(5.39218, -2.6004, “WEIB”) text(6.00877, -3.03298, “GENG”) text(5.52783, -2.91186, “LOGNOR”)</p>
+<p>one.dim.profile(Fan.egeng.gmle.out,profile.on.list = 3,range.list =list(c(-8,2)),size = 50)</p>
+<p>profile.plot(Fan.egeng.gmle.outstruct3)</p>
+</div>
+<div id="bisa-examples" class="section level1">
+<h1>bisa examples</h1>
+<p>bear.bisa.gmle.out &lt;- bisa.mle(lzbearing.ld)</p>
+<p>gmleprobplot(lzbearing.ld,distribution=“bisa”,compare=c(“Lognormal”))</p>
+<p>Fan.bisa.gmle.out &lt;- bisa.mle(Fan.ld)</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“bisa”,xxx.mle.out=Fan.bisa.gmle.out,compare=c(“Lognormal”))</p>
+<p>at7987.bisa.gmle.out &lt;- bisa.mle(at7987.ld)</p>
+<p>basic.gmleprobplot(at7987.ld,distribution=“bisa”,xxx.mle.out=at7987.bisa.gmle.out,compare=c(“Lognormal”))</p>
+<p>basic.gmleprobplot(at7987.ld,distribution=“bisa”,plot.dist=“lognormal”,xxx.mle.out=at7987.bisa.gmle.out,compare=c(“Lognormal”))</p>
+</div>
+<div id="igau-examples" class="section level1">
+<h1>igau examples</h1>
+<p>bear.igau.gmle.out &lt;- igau.mle(lzbearing.ld)</p>
+<p>bkfatigue10.igau.gmle.out &lt;- igau.mle(bkfatigue10.ld)</p>
+<p>basic.gmleprobplot(bkfatigue10.ld, distribution=“igau”,xxx.mle.out=bkfatigue10.igau.gmle.out,compare=c(“Lognormal”))</p>
+<p>gmleprobplot(bkfatigue10.ld, distribution=“igau”,compare=c(“Lognormal”)) gmleprobplot(bkfatigue10.ld, distribution=“bisa”,compare=c(“Lognormal”)) gmleprobplot(bkfatigue10.ld, distribution=“gamma”,compare=c(“Lognormal”)) gmleprobplot(bkfatigue10.ld, distribution=“lognormal”,compare=c(“Lognormal”)) gmleprobplot(bkfatigue10.ld, distribution=“Weibull”,compare=c(“Lognormal”))</p>
+</div>
+<div id="gets-threshold-examples" class="section level1">
+<h1>gets (threshold) examples</h1>
+<p>bear.gets.sev.gmle.out &lt;- gets.mle(lzbearing.ld, distribution=“sev”)</p>
+<p>Fan.gets.sev.gmle.out &lt;- gets.mle(small.interval(Fan.ld, delta=.01),distribution=“sev”)</p>
+<p>Fan.gets.nor.gmle.out &lt;- gets.mle(small.interval(Fan.ld, delta=.01),distribution=“normal”)</p>
+<p>basic.gmleprobplot(small.interval(Fan.ld, delta=.01), distribution=“sevgets”,xxx.mle.out=Fan.gets.sev.gmle.out, my.title=“”, cexlab=1.5, compare=list(Fan.gets.nor.gmle.out))</p>
+<p>basic.gmleprobplot(small.interval(Fan.ld, delta=.01), distribution=“sevgets”,xxx.mle.out=Fan.gets.sev.gmle.out, my.title=“”, cexlab=1.5,compare=c(“lognormal”,“gamma”,“bisa”))</p>
+<p>gmleprobplot(small.interval(Fan.ld, delta=.01), distribution=“sevgets”, my.title=“”, cexlab=1.5)</p>
+<p>at7987.sevgets.gmle.out &lt;- gets.mle(at7987.ld, distribution=“sev”)</p>
+<p>at7987.norgets.gmle.out &lt;- gets.mle(at7987.ld, distribution=“normal”)</p>
+<p>basic.gmleprobplot(at7987.ld, distribution=“sevgets”,xxx.mle.out=at7987.sevgets.gmle.out, my.title=“”, cexlab=1.5,compare=list(at7987.norgets.gmle.out))</p>
+<p>AlloyC.ld &lt;- frame.to.ld(alloyc,response.column=c(1,2),censor.column = 3, case.weight.column = 4,data.title = “Alloy C”, time.units = “ksi”)</p>
+<p>AlloyC.sevgets.gmle.out &lt;- gets.mle(AlloyC.ld, distribution=“sev”)</p>
+<p>AlloyC.norgets.gmle.out &lt;- gets.mle(AlloyC.ld, distribution=“normal”)</p>
+<p>basic.gmleprobplot(AlloyC.ld, distribution=“sevgets”,xxx.mle.out=AlloyC.sevgets.gmle.out, my.title=“”,cexlab=1.5,plot.dist=“sev”)</p>
+<p>AlloyC.gets.nor.gmle.out &lt;- gets.mle(AlloyC.ld, distribution=“normal”) basic.gmleprobplot(AlloyC.ld, distribution=“normalgets”,xxx.mle.out=AlloyC.norgets.gmle.out, my.title=“”, cexlab=1.5, plot.dist=“sev”)</p>
+<div id="begin-to-fill-region-for-lr-confidence-intervals" class="section level3">
+<h3>begin to fill region for lr confidence intervals</h3>
+</div>
+</div>
+<div id="section-2" class="section level1">
+<h1></h1>
+</div>
+<div id="the-things-between-iff-are-experimental" class="section level1">
+<h1>the things between if(F){…} are experimental</h1>
+<div id="section-3" class="section level2">
+<h2></h2>
+<p>if(F){</p>
+<p>Fan.egeng.gmle.out &lt;- FillRegion(Fan.egeng.gmle.out,nbound=10,iter = 500)</p>
+<p>summary(Fan.egeng.gmle.out.jcr)</p>
+<p>names(Fan.egeng.gmle.out.jcr)</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“egeng”,xlim=c(200,99999),ylim=c(.0011,.69),xxx.mle.out=Fan.egeng.gmle.out,my.title=“”,cexlab=1.5,conlev=.95,ciMethod=“lr.approx”,length.time.vec = 2)</p>
+<p>bear.egeng.gmle.out &lt;- egeng.mle(lzbearing.ld)</p>
+<p>Fan.egeng.gmle.out &lt;- egeng.mle(Fan.ld)</p>
+<p>Fan.weibull.gmle.out &lt;- FillRegion(Fan.weibull.gmle.out,nbound=4,iter = 50, cull = 2 )</p>
+<p>summary(Fan.weibull.gmle.out.jcr) summary(Fan.weibull.gmle.out)</p>
+<p>mleprobplot(Fan.ld,“Weibull”, xlim=c(200,9999), ylim=c(.0031,.49))</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“Weibull”,xlim=c(200,9999),ylim=c(.0031,.49),xxx.mle.out=Fan.weibull.gmle.out,my.title=“”,cexlab=1.5,conlev=.95,length.time.vec = 30)</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“Weibull”,xlim=c(200,9999),ylim=c(.0031,.49),xxx.mle.out=Fan.weibull.gmle.out,my.title=“”,cexlab=1.5,conlev=.95,ciMethod=“lr.approx”,length.time.vec = 30)</p>
+<p>Fr.conf(fcn = function(theta,time,distribution){f.phibf((log(time)-theta[1])/exp(theta[2]),distribution=“Weibull”) }, fcn.arg2 =log.seq(200,2000,length=10), gmle.out = Fan.weibull.gmle.out, ptwise=T)</p>
+<p>Fr.conf(fcn = function(theta,time,distribution){f.phibf((log(time)-theta[1])/exp(theta[2]),distribution=“Weibull”) }, fcn.arg2 =log.seq(200,2000,length=10), gmle.out = Fan.weibull.gmle.out, ptwise=T, extrapolate = T)</p>
+<p>Fan.weibull.gmle.out &lt;- ls.mle(Fan.ld,distribution=“Weibull”)</p>
+<div id="work-on-this-fan.lev.gmle.out---ls.mlefan.lddistributionlev" class="section level6">
+<h6>work on this: Fan.lev.gmle.out &lt;- ls.mle(Fan.ld,distribution=“lev”)</h6>
+<p>names(Fan.weibull.gmle.out)</p>
+<p>Fan.weibull.gmle.out &lt;- FillRegion(Fan.weibull.gmle.out, nbound=4,iter = 500, cull = 2 ) summary(Fan.weibull.gmle.out.jcr)</p>
+<p>mleprobplot(Fan.ld,distribution=“Lognormal”)</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“Weibull”, plot.dist = “Weibull”, xxx.mle.out=Fan.weibull.gmle.out,my.title=“”,cexlab=1.5, conlev=.95,ciMethod=“lr.approx”,length.time.vec = 20)</p>
+<p>Fan.lognormal.gmle.out &lt;- ls.mle(Fan.ld,distribution=“Lognormal”)</p>
+<p>basic.gmleprobplot(Fan.ld,distribution=“Lognormal”, plot.dist = “Lognormal”, xxx.mle.out=Fan.lognormal.gmle.out,my.title=“”,cexlab=1.5, conlev=.95,ciMethod=“lr.approx”,length.time.vec = 20)</p>
+<p>BearingCage.weibull.gmle.out &lt;- ls.mle(BearingCage.ld,distribution=“Weibull”) names(BearingCage.weibull.gmle.out)</p>
+<p>BearingCage.weibull.gmle.out.jcr &lt;- FillRegion(BearingCage.weibull.gmle.out,nbound=4,iter = 500, cull = 2 )</p>
+<p>summary(BearingCage.weibull.gmle.out.jcr)</p>
+<p>mleprobplot(BearingCage.ld,distribution=“Weibull”, xlim=c(200,10000),ylim=c(.00031,.19), time.vec =log.seq(200,10000,20))</p>
+<p>basic.gmleprobplot(BearingCage.ld,distribution=“Weibull”,xxx.mle.out=BearingCage.weibull.gmle.out,my.title=“”,cexlab=1.5,conf.level=.95,length.time.vec = 20,xlim=c(200,10000),ylim=c(.00031,.19), time.vec =log.seq(200,10000,20),ciMethod=“lr.approx”)</p>
+<p>basic.gmleprobplot(BearingCage.ld,distribution=“Weibull”,xxx.mle.out=BearingCage.weibull.gmle.out,my.title=“”,cexlab=1.5,conf.level=.95,length.time.vec = 20, xlim=c(200,10000),ylim=c(.00031,.19), time.vec =log.seq(200,10000,20))</p>
+<p>profile.plot(Fr.profile(fcn &lt;- function(x){x[1]}, BearingCage.weibull.gmle.out))</p>
+<p>tmppro &lt;- Fr.profile(fcn &lt;- function(x){x[1]}, BearingCage.weibull.gmle.out)</p>
+</div>
+</div>
+</div>
+<div id="write-a-wrapper-to-specify-the-function-for-profile-e.g.-orig-param-param-quantiles-failure-prob" class="section level1">
+<h1>write a wrapper to specify the function for profile (e.g., orig param, param, #quantiles, failure prob)</h1>
+<p>vchan.functions &lt;- c(“Fr.profile”, “FillRegion”,“Fr.conf”,“summary.FillRegion.out”,“basic.gmleprobplot”,“gmleprobplot”)</p>
+<p>profile.plot(tmppro)</p>
+<p>do.profile.plot(BearingCage.weibull.gmle.out,parameter=“log(scale)”) do.profile.plot(BearingCage.weibull.gmle.out,original.parameter=“scale”) do.profile.plot(BearingCage.weibull.gmle.out,quantile=.1) do.profile.plot(BearingCage.weibull.gmle.out,failure.probability=5000)</p>
+<p>BearingCage.weibull.gmle.out<span class="math inline">\(model\)</span>f.origparam</p>
+<p>}</p>
+</div>
+<div id="right-truncation-example" class="section level1">
+<h1>right truncation example</h1>
+<p>doatrun.ld &lt;- frame.to.ld(doatrun,response.column = c(1,2), censor.column = 3, case.weight.column = 4,truncation.response.column=5, truncation.type.column=6, data.title = “DOA Truncated Data”, time.units = “Hours”)</p>
+<p>summary(doatrun.ld)</p>
+<p>cdfest(doatrun.ld)</p>
+<p>mlest(doatrun.ld,“Weibull”)</p>
+<p>mleprobplot(doatrun.ld,distribution=“Weibull”) mleprobplot(doatrun.ld,distribution=“Weibull”,trunc.correct=F)</p>
+<p>npprobplot(doatrun.ld,distribution=“Weibull”) npprobplot(doatrun.ld,distribution=“Weibull”,trunc.correct=F)</p>
+</div>
+<div id="left-truncation-example" class="section level1">
+<h1>left truncation example</h1>
+<p>lfptrun100.ld &lt;- frame.to.ld(lfptrun100,response.column = c(1), case.weight.column = 2,truncation.response.column=3, truncation.type.column=4, data.title = “LFP Truncated Data”, time.units = “Hours”)</p>
+<p>summary(lfptrun100.ld)</p>
+<p>cdfest(lfptrun100.ld)</p>
+<p>mlest(lfptrun100.ld,“Weibull”)</p>
+<p>mleprobplot(lfptrun100.ld,distribution=“Weibull”,trunc.correct=F) mleprobplot(lfptrun100.ld,distribution=“Weibull”)</p>
+<p>plot(lfptrun100.ld,distribution=“Weibull”,trunc.correct=F) plot(lfptrun100.ld,distribution=“Weibull”)</p>
+</div>
+<div id="section-4" class="section level1">
+<h1></h1>
+</div>
+<div id="section-5" class="section level1">
+<h1></h1>
+</div>
+<div id="examples-of-fitting-the-random-fatigue-limit-model" class="section level1">
+<h1>Examples of fitting the Random Fatigue Limit Model</h1>
+</div>
+<div id="section-6" class="section level1">
+<h1></h1>
+</div>
+<div id="section-7" class="section level1">
+<h1></h1>
+</div>
+<div id="section-8" class="section level1">
+<h1>———————————————————–</h1>
+</div>
+<div id="laminate-panel-fatigue-data" class="section level1">
+<h1>Laminate Panel Fatigue Data</h1>
+</div>
+<div id="section-9" class="section level1">
+<h1>———————————————————–</h1>
+<p>LaminatePanel[1:5,]</p>
+<p>LaminatePanel.ld &lt;- frame.to.ld(laminatepanel,response.column=“Kilocycles”,time.units=“Kilocycles”,data.title =“Laminate Panel Fatigue Data”,censor.column=“Status”, x.column=“MPa”)</p>
+<p>censored.data.plot(LaminatePanel.ld, x.axis = “log”, y.axis = “log”,response.on.yaxis = F)</p>
+<p>censored.data.plot(LaminatePanel.ld)</p>
+<p>LaminatePanel.fit11.out &lt;- rflm.mle(LaminatePanel.ld,cond.dist = “sev”, fl.dist = “sev”)</p>
+<p>plot(LaminatePanel.fit11.out,response.on.yaxis = F)</p>
+<p>LaminatePanel.fit11f.out &lt;- rflm.mle(LaminatePanel.ld,cond.dist = “sev”, fl.dist = “sev”, fixed.param.list=list(fixed.parameters=3,fixed.parameter.values=.20),debug=1)</p>
+<p>plot(LaminatePanel.fit11f.out,response.on.yaxis = F)</p>
+<p>LaminatePanel.fit12.out &lt;- rflm.mle(LaminatePanel.ld,cond.dist = “sev”, fl.dist = “normal”) print(LaminatePanel.fit12.out)</p>
+<p>LaminatePanel.fit21.out &lt;- rflm.mle(LaminatePanel.ld, cond.dist = “normal”, fl.dist = “sev”) print(LaminatePanel.fit21.out)</p>
+<p>plot(LaminatePanel.fit21.out, response.on.yaxis = F)</p>
+<p>LaminatePanel.fit22.out &lt;- rflm.mle(LaminatePanel.ld,cond.dist = “normal”, fl.dist = “normal”) print(LaminatePanel.fit22.out)</p>
+<p>if(F){</p>
+<p>one.dim.profile(LaminatePanel.fit22.out,profile.on.list=3,size = 50, range.list = list(c(-35,0)),save.parameter.vectors=T)</p>
+<p>one.dim.profile(LaminatePanel.fit22.out,profile.on.list=3, size = 300, range.list = list(c(-35,0)), save.parameter.vectors=T)</p>
+<p>profile.plot(LaminatePanel.fit22.outstruct3)</p>
+<p>one.dim.profile(LaminatePanel.fit22.out,profile.on.list=5,size = 30, range.list = list(c(-9.21, -2.3)),save.parameter.vectors=T)</p>
+<p>}</p>
+</div>
+<div id="section-10" class="section level1">
+<h1>———————————————————–</h1>
+</div>
+<div id="inconel-superalloy-data" class="section level1">
+<h1>inconel superalloy data</h1>
+</div>
+<div id="section-11" class="section level1">
+<h1>———————————————————–</h1>
+<p>inconelsub &lt;- inconel[inconel$Strain&lt;.007,]</p>
+<p>inconel.ld &lt;- frame.to.ld(inconel,response.column=“Cycles”,data.title =“Inconel Superalloy Fatigue Data with Stress &lt; 7000”,censor.column=“Status”, x.column=“Strain”)</p>
+<p>censored.data.plot(inconel.ld, y.axis = “log”,response.on.yaxis = F)</p>
+<p>inconel.fit11 &lt;-rflm.mle(inconel.ld, cond.dist = “sev”, fl.dist = “sev”) print(inconel.fit11)</p>
+<p>plot(inconel.fit11)</p>
+<p>inconel.fit12 &lt;-rflm.mle(inconel.ld, cond.dist = “sev”, fl.dist = “normal”) print(inconel.fit12)</p>
+<p>inconel.fit21 &lt;-rflm.mle(inconel.ld, cond.dist = “normal”, fl.dist = “sev”)## print(inconel.fit21)</p>
+<p>inconel.fit22 &lt;-rflm.mle(inconel.ld, cond.dist = “normal”, fl.dist = “normal”) print(inconel.fit22)</p>
+<p>plot(inconel.fit22)</p>
+</div>
+<div id="section-12" class="section level1">
+<h1>———————————————————–</h1>
+</div>
+<div id="titanium-ti64-fatigue-data" class="section level1">
+<h1>titanium Ti64 fatigue data</h1>
+</div>
+<div id="section-13" class="section level1">
+<h1>———————————————————–</h1>
+<p>titanium.ld &lt;- frame.to.ld(titanium,response.column=“kcycles”,censor.column=“Status”,data.title=“Ti64 Fatigue Failure Data”,x.column=“kstrain”)</p>
+<p>censored.data.plot(titanium.ld,xlim=c(5.1,24),y.axis = “log”,x.axis = “log”,response.on.yaxis = F)</p>
+<p>titanium.fit11 &lt;-rflm.mle(titanium.ld, cond.dist = “sev”, fl.dist = “sev”) print(titanium.fit11) plot(titanium.fit11)</p>
+<p>titanium.fit12 &lt;-rflm.mle(titanium.ld, cond.dist = “sev”, fl.dist = “normal”)## print(titanium.fit12)</p>
+<p>titanium.fit21 &lt;-rflm.mle(titanium.ld, cond.dist = “normal”, fl.dist = “sev”)## print(titanium.fit21)</p>
+<p>titanium.fit22 &lt;-rflm.mle(titanium.ld, cond.dist = “normal”, fl.dist = “normal”) print(titanium.fit22) plot(titanium.fit22)</p>
+<p>plot(titanium.fit22, response.on.yaxis = F ,xlim=c(5.1,24))</p>
+</div>
+<div id="section-14" class="section level1">
+<h1>———————————————————–</h1>
+</div>
+<div id="concrete-data" class="section level1">
+<h1>Concrete Data</h1>
+</div>
+<div id="section-15" class="section level1">
+<h1>———————————————————–</h1>
+<p>Concrete[1:5,]</p>
+<p>Concrete.ld &lt;- frame.to.ld(concrete,response.column=“kcycles”,time.units=“Kilocycles”,data.title =“Concrete Fatigue Data”,xlabel=“Smax-Sfail”,x.column=“StressRatio”)</p>
+<p>censored.data.plot(Concrete.ld, x.axis = “log”, y.axis = “log”,response.on.yaxis = F)</p>
+<p>Concrete.fit11.out &lt;- rflm.mle(Concrete.ld,cond.dist = “sev”, fl.dist = “sev”) print(Concrete.fit11.out) plot(Concrete.fit11.out,response.on.yaxis = F)</p>
+<p>Concrete.fit12.out &lt;- rflm.mle(Concrete.ld,cond.dist = “sev”, fl.dist = “normal”) print(Concrete.fit12.out)</p>
+<p>Concrete.fit21.out &lt;- rflm.mle(Concrete.ld,cond.dist = “normal”, fl.dist = “sev”) print(Concrete.fit21.out)</p>
+<p>Concrete.fit22.out &lt;- rflm.mle(Concrete.ld,cond.dist = “normal”, fl.dist = “normal”) print(Concrete.fit22.out) plot(Concrete.fit22.out,response.on.yaxis = F)</p>
+</div>
+<div id="section-16" class="section level1">
+<h1>———————————————————–</h1>
+</div>
+<div id="high-cycle-fatigue" class="section level1">
+<h1>high-cycle fatigue</h1>
+</div>
+<div id="section-17" class="section level1">
+<h1>———————————————————–</h1>
+<p>if(F){</p>
+<p>hcf.ld &lt;- frame.to.ld(hcfdata,response.column=“Cycles”,right.censor.names=“0”, data.title=“High Cycle Fatigue Data”,censor.column=“fail”, x.column=c(“SWT”))</p>
+<p>censored.data.plot(hcf.ld, x.axis = “log”,y.axis = “log”)</p>
+<p>censored.data.plot(hcf.ld, x.axis = “log”, y.axis = “log”, response.on.yaxis = F)</p>
+</div>
+<div id="section-18" class="section level1">
+<h1></h1>
+</div>
+<div id="turning-the-trace-on-and-up-the-number-of-digits-for-these" class="section level1">
+<h1>turning the trace on and up the number of digits for these</h1>
+</div>
+<div id="section-19" class="section level1">
+<h1></h1>
+<p>hcf.fit22f1 &lt;- rflm.mle(hcf.ld, cond.dist = “normal”, fl.dist = “normal”,digits=10,dump=7,fixed.param.list=list(fixed.parameters=3,fixed.parameter.values=.02)) #likelihood on Alpha chip= -123.3193856 #likelihood on Wintel chip= -123.31939</p>
+<p>hcf.fit22f2 &lt;-rflm.mle(hcf.ld, cond.dist = “normal”, fl.dist = “normal”,digits=10,dump=7,fixed.param.list=list(fixed.parameters=3,fixed.parameter.values=.0002)) #likelihood on Alpha chip = -123.2937926 #likelihood on Wintel chip= -123.29379</p>
+<p>hcf.fit22f3 &lt;-rflm.mle(hcf.ld, cond.dist = “normal”, fl.dist = “normal”,digits=10,dump=7,fixed.param.list=list(fixed.parameters=3,fixed.parameter.values=.00002)) #likelihood on Alpha chip= -123.2937897 (false convergence messaage, #but the gradiant looks fine) #likelihood on Wintel chip= -123.29620</p>
+</div>
+<div id="section-20" class="section level1">
+<h1></h1>
+</div>
+<div id="notice-that-as-the-fixed-value-of-sigma-approaches-zero-the-likelihood" class="section level1">
+<h1>notice that as the fixed value of sigma approaches zero, the likelihood</h1>
+</div>
+<div id="in-the-constrained-optimization-stops-increasing." class="section level1">
+<h1>in the constrained optimization stops increasing.</h1>
+</div>
+<div id="section-21" class="section level1">
+<h1></h1>
+</div>
+<div id="section-22" class="section level1">
+<h1></h1>
+</div>
+<div id="this-indicates-a-ridge-in-the-likelihood-surface." class="section level1">
+<h1>This indicates a ridge in the likelihood surface.</h1>
+</div>
+<div id="using-the-last-estimates-as-starting-values-for-an-unconstrained-optimization" class="section level1">
+<h1>Using the last estimates as starting values for an unconstrained optimization</h1>
+</div>
+<div id="does-not-yield-any-improvement-but-we-get-a-successful-convergence" class="section level1">
+<h1>does not yield any improvement, but we get a successful convergence</h1>
+</div>
+<div id="perhaps-we-should-not-mesage." class="section level1">
+<h1>(perhaps we should not) mesage.</h1>
+</div>
+<div id="section-23" class="section level1">
+<h1></h1>
+</div>
+<div id="section-24" class="section level1">
+<h1></h1>
+</div>
+<div id="the-following-converges-on-my-alpha-128-bit-double-precision-arithmetic" class="section level1">
+<h1>the following converges on my Alpha (128 bit double precision arithmetic)</h1>
+</div>
+<div id="but-not-on-windows-64-bit-double-precision-arithmetic" class="section level1">
+<h1>but not on Windows (64 bit double precision arithmetic)</h1>
+</div>
+<div id="section-25" class="section level1">
+<h1></h1>
+</div>
+<div id="the-alpha-gave-a-standard-error-of-0.02538-for-an-estimate-of-2e-05" class="section level1">
+<h1>The Alpha gave a standard error of 0.02538 for an estimate of 2e-05!</h1>
+</div>
+<div id="but-no-standard-error-from-windows." class="section level1">
+<h1>But no standard error from windows.</h1>
+</div>
+<div id="section-26" class="section level1">
+<h1></h1>
+<p>hcf22.fit &lt;- rflm.mle(hcf.ld, cond.dist = “normal”, fl.dist = “normal”,digits=10,dump=7, theta.start= c(9.356277116, -2.935035745, 2e-04, 3.863027231, 0.1183292607))</p>
+</div>
+<div id="likelihood-on-alpha-chip--123.2937897" class="section level1">
+<h1>likelihood on Alpha chip = -123.2937897</h1>
+</div>
+<div id="likelihood-on-wintel-chip--123.2937926" class="section level1">
+<h1>likelihood on Wintel chip= -123.2937926</h1>
+<p>plot(hcf.fit22f3, response.on.yaxis = F) plot(hcf22.fit, response.on.yaxis = F)</p>
+</div>
+<div id="this-take-a-while-to-run-but-the-ressult-is-interesting" class="section level1">
+<h1>This take a while to run, but the ressult is interesting</h1>
+</div>
+<div id="section-27" class="section level1">
+<h1></h1>
+</div>
+<div id="section-28" class="section level1">
+<h1></h1>
+</div>
+<div id="warning-with-the-default-size40-the-following-command-uses-a-loop" class="section level1">
+<h1>Warning: with the default size=40, the following command (uses a loop)</h1>
+</div>
+<div id="crashed-my-windows-session-as-i-ran-out-of-ram-128mb." class="section level1">
+<h1>crashed my windows session as I ran out of RAM (128MB).</h1>
+</div>
+<div id="no-problem-on-my-1gb-alpha.-my-guess-is-that-it-will-run-ok-with-256mb" class="section level1">
+<h1>No problem on my 1GB Alpha. My guess is that it will run ok with 256MB</h1>
+</div>
+<div id="it-ran-ok-about-15-minutes-on-my-233mhz-with-size-20" class="section level1">
+<h1>It ran ok (about 15 minutes on my 233MHz) with size = 20</h1>
+</div>
+<div id="section-29" class="section level1">
+<h1></h1>
+</div>
+<div id="section-30" class="section level1">
+<h1></h1>
+<p>censored.data.plot(hcf.ld, x.axis = “log”, y.axis = “log”, response.on.yaxis = F)</p>
+<p>hcf.fit &lt;-rflm.mle(hcf.ld, cond.dist = “sev”, fl.dist = “normal”)</p>
+<p>plot(hcf.fit)</p>
+</div>
+<div id="section-31" class="section level1">
+<h1></h1>
+</div>
+<div id="the-following-indicates-that-we-will-have-trouble-identifying-sigma-from-these-data" class="section level1">
+<h1>The following indicates that we will have trouble identifying sigma from these data</h1>
+</div>
+<div id="section-32" class="section level1">
+<h1></h1>
+<p>one.dim.profile(hcf22.fit,profile.on.list=3,size = 20, range.list = list(c(-10,0)))</p>
+<p>profile.plot(hcf22.fitstruct3)</p>
+</div>
+<div id="check" class="section level1">
+<h1>check</h1>
+<p>xcdf(1, 2, 29, -5, 270 , .36, 5.3, .020,6.0 ) #jave[1] 0.009247504 #&gt; xpdf(1, 2, 29, -5, 380 , .36, 5.3, .020,3.5322 ) #jave[1] 0.2656861</p>
+<p>}</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

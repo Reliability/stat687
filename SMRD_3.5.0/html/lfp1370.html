@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Integrated circuit life test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for lfp1370 {SMRD}"><tr><td>lfp1370 {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Integrated circuit life test</h2>
+
+<h3>Description</h3>
+
+<p>The primary purpose of this experiment was to estimate the proportion of defective units being manufactured in the current production process and to estimate the amount of 'burn-in' time that would be required to remove most of the defective units from the product population.  The reliability engineers were also interested in whether it might be possible to get the needed information about the state of the production process, in the future, using much shorter tests (say 200 or 300 hours).\  The event column indicates that these data are singly right censored at 1370 hours.  However, the presence of ties indicates that the data are inspection times, and are thus interval censored observations.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 22 rows and 3 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> hours </td><td style="text-align: left;"> Accumulated time at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>hours</code> (failure/right-censored) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>hours</code> </td><td style="text-align: left;"> <b>Numeric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>W.Q. Meeker (1987), Limited failure population life tests: application to integrated circuit reliability, Technometrics, 29, 51-65.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="lfptrun100.html">lfptrun100</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

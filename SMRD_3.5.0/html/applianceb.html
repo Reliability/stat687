@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Appliance-B failures (multiple data sources)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for applianceb {SMRD}"><tr><td>applianceb {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Appliance-B failures (multiple data sources)</h2>
+
+<h3>Description</h3>
+
+<p>Bogdanoff and Kozin give the size of fatigue cracks as a function of number of the cycles and the of applied stress for 21 test specimens. This is an example of degradation data.  The data were reported originally in Hudak, Saxena, Bucci, and Malcolm (1978). The data were collected to obtain information on crack growth rates for the alloy.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 398 rows and 5 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> source </td><td style="text-align: left;"> Information source (test environment) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>days</code> (failure/right-censored/left-censored/interval-censored)  </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>time</code> </td><td style="text-align: left;"> <b>Numeric</b> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 4] </td><td style="text-align: left;"> days </td><td style="text-align: left;"> Accumulated time at <code>event</code> </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;"> 
+  [, 5] </td><td style="text-align: left;"> mode </td><td style="text-align: left;"> Failure mode observed at <code>days</code> </td><td style="text-align: left;"> <b>Categoric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>Lieblein J., and Zelen, M. (1956), Statistical investigation of the fatigue life of deep-groove ball bearings, Journal of Research,  National Bureau of Standards, 57, 273&ndash;316.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

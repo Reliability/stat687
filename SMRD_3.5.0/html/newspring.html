@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: High-temp gas spring accelerated test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for newspring {SMRD}"><tr><td>newspring {SMRD}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>High-temp gas spring accelerated test</h2>
+
+<h3>Description</h3>
+
+<p>These circuit packs were manufactured under the same design, but by two different vendors. The trial ran for 10,000 hours. The 4993 circuit packs from Vendor 1 came straight from production.  The 4993 circuit packs from Vendor 2 had already seen 1000 hours of burn-in testing at the manufacturing plant under operating conditions similar to those in the field trial. The circuit packs manufactured by Vendor 2 were sold at a higher price because field reliability was supposed to have been improved by the burn-in screening of circuit packs containing defective components. Failures during the first 1000 hours of burn-in were not recorded. This is the reason for the unknown entries in the table and for having information out to 11,000 hours for Vendor 2.  These data are for the first failure in a position; information on circuit packs replaced after initial failure in a position was not part of the study.
+</p>
+
+
+<h3>Format</h3>
+
+<p>A <code>data.frame</code> with 80 rows and 6 variables:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+  [, 1] </td><td style="text-align: left;"> kilocycles </td><td style="text-align: left;"> Accumulated cycles at <code>event</code> (in thousands) </td><td style="text-align: left;"> <b>Numeric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 2] </td><td style="text-align: left;"> centimeters </td><td style="text-align: left;"> Spring stroke length </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 3] </td><td style="text-align: left;"> fahrenheit </td><td style="text-align: left;"> Temperature applied to the spring </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 4] </td><td style="text-align: left;"> method </td><td style="text-align: left;"> Manufacturing method (New/Old) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 5] </td><td style="text-align: left;"> event </td><td style="text-align: left;"> Event observed at <code>kcycles</code> (Suspended/Failed) </td><td style="text-align: left;"> <b>Categoric</b></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  [, 6] </td><td style="text-align: left;"> count </td><td style="text-align: left;"> Number of events observed at <code>kcycles</code> </td><td style="text-align: left;"> <b>Numeric</b>
+  </td>
+</tr>
+
+</table>
+
+
+<h3>Source</h3>
+
+<p>Meeker W.Q. (1999) A factorial experiment to compare the life times of springs as a function of a processing temperatire and amount of displacement in the spring test (Unpublished)
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>SMRD</em> version 0.13.1 <a href="00Index.html">Index</a>]</div>
+</body></html>
