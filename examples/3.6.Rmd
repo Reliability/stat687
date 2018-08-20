@@ -51,15 +51,24 @@ p3_6 <- tibble::tribble(
 A nonparametric estimate for $F(t_i)$ can be computed by constructing a table similar to Table 2._.  This table is can be constructed using the code shown in the chunk below
 
 ```{r}
-t_j <- 
-n_j <- 
-d_j <- 
-r_j <- 
-p_j <- 
-minusp_j <- 
-St_i <- 
-Ft_i <- 
-se_F <- 
+t_j <- p3_6$hours
+n_j <- c(30,sum(p3_6$count) - cumsum(p3_6$count))
+length(n_j) <- length(t_j)
+d_j <- p3_6$count * (p3_6$event == 'fail')
+r_j <- p3_6$count * (p3_6$event == 'right')
+p_j <- d_j / n_j
+minusp_j <- 1 - p_j 
+St_i <- cumprod(minusp_j)
+Ft_i <- 1 - St_i
+se_F <- sqrt(St_i^2 * cumsum(p_j/(n_j*(1-p_j))))
+
+lower <- Ft_i + qnorm(0.025, lower.tail = T) * se_F
+upper <- Ft_i + qnorm(0.025, lower.tail = F) * se_F
+
+w <- exp((qnorm(0.975)*se_F)/(Ft_i*(1-Ft_i)))
+
+lower.logit <- (Ft_i)/(Ft_i+(1-Ft_i)*w)
+upper.logit <- (Ft_i)/(Ft_i+(1-Ft_i)/w)
 
 df <- data.frame(t_j,n_j,d_j,r_j,p_j,
                  minusp_j,St_i,Ft_i,se_F,
@@ -83,6 +92,18 @@ print.xtable(xtb,
 a. __Plot the nonparametric estimate of $F(t)$.__
 
 a. __Compute pointwise approximate $95\%$ confidence intervals for $F(t)$ and add these to your plot.__
+
+```{r}
+plot(x = t_j, y = Ft_i, type = 's', ylim = c(-0.5, 0.75))
+lines(t_j, lower, type = 's', col ='blue')
+lines(t_j, upper, type = 's', col ='blue')
+```
+
+```{r}
+plot(x = t_j, y = Ft_i, type = 's', ylim = c(0, 1))
+lines(t_j, lower.logit, type = 's', col ='blue', lty = 3)
+lines(t_j, upper.logit, type = 's', col ='blue', lty = 3)
+```
 
 a. __Explain why it might be that the 30 devices are not operating and failing independently and how this would affect conclusions drawn from the data.__
 
