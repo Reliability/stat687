@@ -1,0 +1,8 @@
+base
+coda
+rjags
+R2jags
+mcmcplots
+ggplot2
+StanHeaders
+rstan
