@@ -1,0 +1,346 @@
+---
+title: "Monte Carlo Sampling From the Posterior Distribution"
+subtitle: "A Tutorial on Implementing Bayesian Statistical Methods"
+author: "Jason Freels"
+date: "`r format(Sys.Date(), '%d %b %Y')`"
+output: 
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE }
+knitr::opts_chunk$set(echo = TRUE)
+library(SMRD)
+```
+
+# Chapter Overview
+
+This tutorial demonstrates how to generate samples from a Bayesian joint posterior distribution and the associated marginal distributions using Monte Carlo simulation.  Along the way, several chunks of R code will be shown to allow the reader to the replicate presented.  Note, some code chunks reference functions from an unpublished software package called `SMRD`.  This package implements the methods presented in the text [_Statistical Methods for Reliability Data_]() and is currently under development by [Jason Freels](https://auburngrads.github.io) and [Bill Meeker](http://www.public.iastate.edu/~wqmeeker/). The anticipated publication date for the `SMRD` package is mid 2018.  
+# The Data Set
+
+The data examined in this tutorial is the `bearingcage` dataset from Chapter 14 of SMRD. Bearing cages are used to extend the life of of ball bearing assemblies by ensuring that the ball bearings do not drift out of position relative to one another during use. For one such assembly the service life requirement was specified such that $t_{_{0.1}}$ (aka the B10 life) be greater that 8000 hours. Analysts were concerned that the design of the bearing cage in this assembly was inadequate and could lead to premature failures during service. Service times were collected for 1703 assemblies that were introduced into service over time.  The analysts wanted to use the service life data to determine if a redesign was needed to ensure that the units could meet the service life requirement.  Management was also interested in determining the number of additional failures that could be expected over the next year for the population of assemblies already in service.
+
+The `bearingcage` dataset (shown in the table below) is comprised of three columns, `hours`, `event`, and `count`.  The `hours` column lists the accumulated number of service hours for each assembly when it either failed of was removed from the test.  The `event` column indicates whether the assembly failed or was right censored at `hours`.  The `count` column lists the number of assemblies for a given observation.  The fact that ties exist in this dataset indicates that multiple assemblies were either added to the test, or removed from the test as a group.
+
+```{r, echo=FALSE}
+bearingcage
+```
+
+## Fitting The Data
+
+For data with this structure, the likelihood function is expressed as 
+
+$$
+\mathscr{L}(\boldsymbol{\theta}|DATA)= \prod_{i=1}^{1703}\left[f(t_i|\boldsymbol{\theta})\right]^{\delta_i}\times\lbrack1-F(t_i|\boldsymbol{\theta})\rbrack^{1-\delta_i}
+$$
+
+where $f(t_i|\theta)$ and $F(t_i|\boldsymbol{\theta})$ are the pdf and cdf of the candidate distribution, $\boldsymbol{\theta}$ is the parameter vector, and $\delta_i$ is an indicator variable where value is expressed as
+
+$$
+\delta_i=
+\begin{cases}
+1 \quad \mbox{ if } t_i \mbox{ is a failure}\\\\
+0 \quad \mbox{ if } t_i \mbox{ is a right-censored observation}.
+\end{cases}
+$$
+
+Engineers familiar with this assembly noted that the Weibull distribution has historically been the best-fit model for the data.  In the following code chunk we fit the `bearingcage` dataset using the Weibull distribution, returning the MLE's $\eta_{_{MLE}}, \beta_{_{MLE}}$ and the maximum value of the log-likelihood function $\mathcal{L}(\eta_{_{MLE}}, \beta_{_{MLE}}|DATA)$. 
+
+```{r}
+bear.ld <- frame.to.ld(bearingcage,
+                       response.column = 1,
+                       censor.column = 2,
+                       case.weight.column = 3)
+
+bear.weib.mle  <- print(mlest(bear.ld, distribution = 'weibull'))
+
+max.loglik.weib <- as.numeric(bear.weib.mle$ll.value)
+mle.params.weib <- bear.weib.mle$mle.table
+
+max.loglik.weib ; mle.params.weib
+```
+
+Next, we recall the relationship between the Weibull and the smallest extreme value distributions.  That is, for $T \sim WEIB(\eta, \beta) \rightarrow \ln[T] \sim SEV(\mu, \sigma)$, where $\mu = \ln[\eta]$ and $\sigma = 1/\beta$.  Thus, in the next code chunk we take the natural log of the service times and model the data using the SEV distribution.  Since this returns a higher value for the log-likelihood function, we conclude that the smallest extreme value distribution provides a better fit to the log-transformed data than does the Weibull distribution to the raw data. 
+
+```{r}
+bear.ld$hours <- log(bear.ld$hours)
+
+bear.sev.mle  <- print(mlest(bear.ld, distribution = 'sev'))
+
+max.loglik.sev <- as.numeric(bear.sev.mle$ll.value)
+mle.params.sev <- bear.sev.mle$mle.table
+
+max.loglik.sev ; mle.params.sev
+```
+
+We're interested in observing the shape of the likelihood function using the SEV distribution.  The figures below show the 'relative likehood surface' (2-D & 3-D) indicating how the value of the likelihood function changes over the $\mu, \sigma$ parameter space.  Take a moment to review the top figure, __it will take on a key role when we want to simulate from joint posterior distribution $f(\mu,\sigma|DATA)$.__
+
+```{r, fig.align='center', fig.width=9}
+simple.contour(bear.ld, 
+               distribution = 'sev', 
+               show.confidence = F,
+               zoom.level = .25,
+               xlim = c(8,11),
+               ylim = c(0.14,0.75))
+```
+
+```{r, fig.align='center', fig.width=9}
+simple.contour(bear.ld, 
+               distribution = 'sev', 
+               show.confidence = F,
+               zoom.level = .25,
+               threeD = T,
+               xlim = c(8,11),
+               ylim = c(0.14,0.75))
+```
+
+# Introducing Bayesian Statistical Methods
+
+After communicating the above results, management expressed concern that out of 1703 assemblies tested only six failures were observed.  Their concern is well-founded, because the data include so many right-censored observations the analysis may under-report the reliability of the assemblies.   The analysts suggest using Bayesian techniques to merge the results of this analysis with the engineers prior knowledge of the assemblies. Management is skeptical, as they are unfamiliar with these types of analyses.  However, the analysts remind them that Bayesian techniques always allow you to reject the introduction of prior information and fall back on the results obtained using maximum likelihood.
+
+## Eliciting prior information on $\mu$ and $\sigma$ {.tabbed}
+
+The engineers familiar with these bearing assemblies have prior knowledge regarding the value of the parameters of the failure distribution.  They state that the value of $\sigma$ is 'almost certainly' between $0.2$ and $0.5$.  Unfortunately, the engineers are much less certain about the value of $\mu$ as management would never allow enough failures to occur such that an accurate estimate could be made.  However, they suggest that the time at which $1\%$ of the assemblies fail, $t_{0.01}$, is independent of $\sigma$ and is somewhere between 100 hours and 5000 hours.  While this estimate for $t_{0.01}$ is certainly __vague__, it can still serve as a useful starting point.  The tabbed sections below show how the analysts translate the engineers statements into prior distributions for $t_{0.01}$ and $\sigma$.
+
+### Prior distrbution for $\sigma$
+
+Further discussions with the engineers reveal that
+
+$$
+\log[\sigma] \sim NOR(a_0, b_0).
+$$
+
+To compute values for $a_0$ and $b_0$, recall the engineers statement that $\sigma = 1/\beta$ is 'almost certainly' between $0.2$ and $0.5$.  We translate 'almost certainly' as meaning that $P(0.2 \le \sigma \le 0.5) = 0.99$, which implies that 
+
+$$
+\begin{aligned}
+P(\sigma\le 0.2) &=\Phi_{_{NOR}}\left(\frac{\log[0.2]-a_0}{b_0}\right)=0.005\\\\
+P(\sigma\le 0.5) &=\Phi_{_{NOR}}\left(\frac{\log[0.5]-a_0}{b_0}\right)=0.995.
+\end{aligned}
+$$
+
+Since the normal disribution is symmetric we know that $\Phi^{-1}_{_{NOR}}(0.005) = -\Phi^{-1}_{_{NOR}}(0.995)$, which when used with the above expressions gives
+
+$$
+\left(\frac{\log[0.2]-a_0}{b_0}\right)=-\left(\frac{\log[0.5]-a_0}{b_0}\right).
+$$
+
+After rearranging this expression $a_0$ is found to be $\log[0.2*0.5]/2 = -1.151$. Substituting this value for $a_0$ then gives
+
+$$
+b_0=\frac{\log[0.2]-(-1.151)}{\Phi^{-1}_{_{NOR}}(0.005)}=0.178.
+$$
+
+Thus, we have expressed the engineers uncertainty about $\log[\sigma]$ as a $NOR(-1.151,0.178)$ distribution.  We verify that this seems appropriate by showing the engineers a plot of the pdf for this distribution, which is presented in the figure below.  The engineers agree that this is an adequate depiction of their uncertainty about the value of $\sigma =1/\beta$
+
+```{r, echo=FALSE, fig.align='center',fig.cap="Prior distribution for Weibull shape parameter $\\log[\\sigma] \\sim NOR(-1.151,0.178)$ in Example 14.1", fig.width=8}
+par(mfrow = c(1,2), lwd = 2, las = 1, font = 2)
+curve(dlnorm(x, meanlog = -1.151, sdlog = 0.178),
+      n = 300,
+      xlab = expression(sigma*~'[log axis]'),
+      ylab = expression('f('*sigma*')'),
+      xlim = c(0.2,0.5),
+      log = 'x')
+curve(dnorm(log(x), mean = -1.151, sd = 0.178),
+      n = 300,
+      xlab = expression('log['*sigma*']'),
+      ylab = expression('f(log['*sigma*'])'),
+      xlim = c(0.2,0.5))
+```
+
+### Prior Distribution on $t_{0.01}$
+
+Recall that the engineers familiar with these ball bearing assemblies were not very confident about the value of the B1 life (i.e. $t_{0.01}$).  When the available information about the value of a parameter is vague, it is often modeled with what is known as a __vague prior__. The prior distribution for $t_{0.01}$ was specified as $LOGUNIF(a_1,b_1)$ where $a_1 = 100, \;b_1=5000$ and
+
+$$
+f(\log[t_{0.01}]) = \frac{1}{\log[b_1/a_1]}, \quad 100 \le t_{0.01}\le 5000.
+$$
+
+```{r, echo=FALSE, fig.align='center',fig.cap="Prior distribution for the B1 life $t_{0.01}$ in Example 14.1", fig.width=11}
+par(mfrow = c(1,2), lwd = 2, las = 1, font = 2)
+curve(dunif(x, 100, 5000),
+      n = 300,
+      xlab = expression('log['*t[0.01]*'] ~ UNIF(log(100),log(5000))'),
+      ylab = expression('f(log['*t[0.01]*'])'),
+      xlim = c(99,5001),
+      log = 'x')
+curve(1/x * (dunif(x, 100, 5000)),
+      n = 300,
+      xlab = expression(t[0.01]*" ~ LOGUNIF(100,5000)"),
+      ylab = expression('f('*t[0.01]*')'),
+      xlim = c(100,5000))
+```
+
+Under the assumption that the random variables $t_{0.01}$ and $\sigma$ are independent, we can generate random samples from the joint prior distribution $f(t_{0.01}, \sigma)$.  However, our interest is in generating random samples from the joint prior distribution $f(\mu, \sigma)$.  We know from Chapters 4, 6, and 8 that $\mu = \log[t_{p}]-\Phi^{-1}_{_{SEV}}(p)\sigma$, therefore we can use the simulated values from $f(t_{p})$ and $f(\sigma)$ to compute values from $f(\mu)$ using Algorithm 14.1.
+
+## Algorithm 14.1
+
+In this section we'll use Algorithm 14.1 to generate sample from the joint __posterior__ distribution $f(\mu, \sigma|DATA)$.  Recall, the posterior distribution represents our updated uncertainty about the values of $\mu$ and $\sigma$ after observing data.  
+
+The first is to generate random samples from the prior distributions of $\mu$ and $\sigma$ that were specified in the previous sections.  In the code chunk below, we generate two sets of $50,000$ samples from one from $f(t_{0.01})$ and the other from $f(\sigma)$.  These values are then used to compute samples from $f(\mu)$ 
+
+```{r, cache=TRUE}
+N = 50000
+t0.01 <- 100 * (5000 / 100) ^ runif(N)
+sigma <- exp(-1.151 + 0.178 * qnorm(runif(N)))
+mu    <- log(t0.01) - qsev(0.01) * sigma 
+```
+
+As a verification, we plot the joint prior distribution $f(\mu,\sigma)$ and both of the marginal distributions $f(\mu)$ and $f(\sigma)$. 
+
+```{r, fig.align='center', fig.width=9, fig.height=5}
+par(lwd = 2, font = 2, las = 1)
+nf <- layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE), 
+             respect = TRUE)
+
+plot(mu, sigma, 
+     pch = 16, cex = 0.8, 
+     col = scales::alpha('gray', 0.5),
+     xlab = expression(mu),
+     ylab = expression(sigma))
+
+hist(mu, main = '', 
+     col = 'gray', 
+     border = 'white', 
+     probability = T,
+     xlab = expression(mu))
+lines(density(mu, adjust = 2), col = 4)
+
+hist(sigma, 
+     main = '', 
+     col = 'gray', 
+     border = 'white', 
+     probability = T,
+     xlab = expression(sigma))
+lines(density(sigma, adjust = 2), col = 2)
+```
+
+Each of the 50,000 points in the top plot represent a $(\mu, \sigma)$ pair that was a randomly sampled from $f(\mu,\sigma)$.  For each of these 50,000 points we must compute the value of the likelihood function $\mathcal{L}(DATA|\mu_i,\sigma_i) \; i=1,\ldots,50,000$.  For each point we are asking "what would be the probability of observing our data, given the parameters $\mu_i, \sigma_i$?"
+
+To do this we must first expand the dataset since some of the rows are repeated multiple times according the value `case.weight.column`.  The function defined in the next code chunk will do this for us.  
+
+```{r}
+stretch <- function(data = NULL, counts = NULL) {
+ 
+  dats <-
+    sapply(X = 1:ncol(data[,-counts]),
+           FUN = function(x) rep(data[,x],data[,counts]))
+  
+    dats <- data.frame(dats)
+    colnames(dats) <- colnames(data)[-counts]
+  
+  return(dats)
+}
+```
+
+To use the function, specify the name of the dataset `data` and the numeric designator for the `case.weight.column`.  In the chunk below we stretch the dataset, adjust the censor code to correspond with the value of the indicator variable $\delta_i$, and take the log of the times. 
+
+```{r}
+DATAS <- stretch(data = bearingcage, counts = 3)
+
+DATAS$event <- DATAS$event - 1L
+
+DATAS$hours <- log(DATAS$hours)
+```
+
+Next, we compute the value of the log-likelihood function for each pair of simulated values from the prior distributions of $\mu_i$, $\sigma_i$ and use these to compute the values of the relative likelihood function 
+
+$$
+R(\mu_i,\sigma_i) = \frac{\mathcal{L}(\mu_i,\sigma_i)}{\mathcal{L}(\mu_{_{MLE}},\sigma_{_{MLE}})}
+$$
+
+where $\mathcal{L}(DATA|\mu_{_{MLE}},\sigma_{_{MLE}})$ was determined near the beginning of this tutorial.  In the following code chunk we create a function `likely()` to compute $\mathcal{L}(\mu_i,\sigma_i), \; i = 1,\ldots, 50,000$
+
+```{r}
+likelyr <- function(time = NULL, cens = NULL, params = list(NA, NA)) {
+  
+  fails <- 
+    cens*log(dsev(time, loc = params[[1]], scale = params[[2]]))
+  
+  right <- 
+    (1-cens)*log(1 - psev(time, loc = params[[1]], scale = params[[2]]))
+  
+  loglike <- sum(fails + right, na.rm = T)
+  
+  return(loglike)
+}
+```
+
+In the next chunk, we use `likely()` to compute all 50,000 relative likelihood function values.
+
+```{r, cache=TRUE}
+rel.like <- 
+  sapply(X = 1:N,
+         FUN = function(x) { 
+               likes <- likelyr(DATAS$hours, 
+                               DATAS$event, 
+                               list(mu[x], sigma[x]))
+               
+                exp(likes) / exp(max.loglik.sev)
+                     })
+```
+
+In the final step of Algorithm 14.1 we generate $N = `r N`$ observations from a random variable $U \sim UNIF(0,1)$ to determine the $(\mu_i,\sigma_i)$ that represent observations from the joint posterior $f(DATA|\mu,\sigma)$.  This is done by finding the values of $\mu_i$ and $\sigma_i$ for which $R(\mu_i, \sigma_i) > U_i \quad i=1,\ldots,N$. 
+
+```{r, cache=TRUE}
+unif.compare <- runif(N)
+post <- which(rel.like-unif.compare > 0)
+```
+
+This results in `r length(post)` observations from the posterior distributions of $\mu$ and $\sigma$.  The plot below shows, once again, the $`r N`$ sampled values from the joint prior distribution $f(\mu_{_{prior}}, \sigma_{_{prior}})$ in gray.  The points shown in red on the plot represent observations from the joint posterior distribution $f(\mu_{_{post}}, \sigma_{_{post}})$.  Note that these observations from joint posterior distribution are a subset of the $`r N`$ observations  from the joint prior distribution that fall on the likelihood surface shown in the plot above.
+
+```{r, fig.align='center', fig.width=9}
+plot(mu, 
+     sigma, 
+     pch = 16, 
+     cex = 0.8, 
+     col = scales::alpha('gray', 0.5),
+     xlim = c(5.2,11.4),
+     ylim = c(0.14,0.675),
+     xlab = expression(mu),
+     ylab = expression(sigma))
+points(mu[post], 
+       sigma[post], 
+       pch = 16, 
+       cex = 0.8, 
+       col = scales::alpha('red', 0.75))
+```
+
+```{r, fig.align='center', fig.width=9, echo=FALSE}
+simple.contour(bear.ld, 
+               distribution = 'sev', 
+               show.confidence = F,
+               zoom.level = .25,
+               xlim = c(5.2,11.4),
+               ylim = c(0.14,0.675))
+```
+
+```{r, fig.align='center', fig.width=6}
+par(mfrow = c(1,2), las = 1, lwd = 2)
+hist(mu[post], main = '', 
+     col = 'gray', 
+     border = 'white', 
+     probability = T)
+lines(density(mu[post], adjust = 2), col = 4)
+
+hist(sigma[post], 
+     main = '', 
+     col = 'gray', 
+     border = 'white', 
+     probability = T)
+lines(density(sigma[post], adjust = 2), col = 2)
+par(mfrow = c(1,1))
+```
+
+We can then determine the $(1-\alpha)\times100\%$ credible intervals for $\mu$ and $\sigma$ using the following code.
+
+```{r}
+quantile(sigma[post], c(0.025,0.975))
+quantile(mu[post],    c(0.025,0.975))
+```
+
+Big take away
+
+> We started with a vague idea of what our uncertainty about $\mu$ and $\sigma$ looked like.  This means that we assigned an equal level of credibility to each of the gray points in the plot. 
+>
+> After observing data and merging this information with our prior information, we assign more credibility to certain points $(\mu, \sigma)$ , shown in red.  Note that these points fall on the likelihood surface shown in the plot above.
